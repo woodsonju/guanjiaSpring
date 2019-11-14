@@ -1,4 +1,10 @@
-@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+.spacer {
+	margin-left: 100px;
+}
+
+
+/* @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 .navbar-icon-top .navbar-nav .nav-link > .fa {
   position: relative;
@@ -112,4 +118,4 @@
   .navbar-icon-top.navbar-expand-xl .navbar-nav .nav-link > .fa > .badge {
     top: -7px;
   }
-}
+} */

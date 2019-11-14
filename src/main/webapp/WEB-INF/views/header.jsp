@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8"/>
+<title></title>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -5,43 +11,69 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
+	
+<link rel="stylesheet" type="text/css" href="../../resources/css/header.css"/>
+</head>
+<body>
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
-	<a class="navbar-brand" href="#">Navbar</a>
-	<button class="navbar-toggler" type="button" data-toggle="collapse"
-		data-target="#navbarSupportedContent"
-		aria-controls="navbarSupportedContent" aria-expanded="false"
-		aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
+	<div
+		class="collapse navbar-collapse col-md-12 col-md-offset-3 col-sm-12 col-xm-12"
+		id="navbarSupportedContent">
+		<ul class="navbar-nav">
+			<li class="nav-item active"><a class="nav-link" href="#"> <img
+					src="resources/images/home.png" alt="Logo" style="width: 40px;">
+					Accueil
+			</a></li>
+		</ul>
 
-	<div class="collapse navbar-collapse" id="navbarSupportedContent">
-		<ul class="navbar-nav mr-auto">
-			<li class="nav-item active"><a class="nav-link" href="#"> <i
-					class="fa fa-home"></i> Home <span class="sr-only">(current)</span>
+		<form style = "margin-left: 100px;" class="form-inline my-2 my-lg-0 spacer">
+			<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
+				<img src="resources/images/search.png" alt="Logo"
+					style="width: 25px;">
+			</button>
+			<input class="form-control mr-sm-2" type="text"
+				placeholder="Recherche produit ou service" aria-label="Search">
+		</form>
+
+		<form style = "margin-left: 100px;" class="form-inline spacer">
+			<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
+				<img src="resources/images/localisation.png" alt="Logo"
+					style="width: 30px;">
+			</button>
+			<input class="form-control mr-sm-2" type="text"
+				placeholder="Toulouse" aria-label="Search">
+		</form>
+
+
+		<ul style = "margin-left: 100px;" class="navbar-nav spacer">
+			<li class="nav-item active"><a class="nav-link" href="#"> <img
+					src="resources/images/panier.png" alt="Logo" style="width: 30px;">
+					Panier
 			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#"> <i
-					class="fa fa-envelope-o"> <span class="badge badge-danger">11</span>
-				</i> Link
+		</ul>
+
+		<ul style = "margin-left: 100px;" class="navbar-nav spacer">
+			<li class="nav-item active"><a class="nav-link" href="#"> <img
+					src="resources/images/compte.png" alt="Logo" style="width: 30px;">
+					Compte
 			</a></li>
-			<li class="nav-item"><a class="nav-link disabled" href="#">
-					<i class="fa fa-envelope-o"> <span class="badge badge-warning">11</span>
-				</i> Disabled
-			</a></li>
-			<li class="nav-item dropdown"><a
-				class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-				role="button" data-toggle="dropdown" aria-haspopup="true"
-				aria-expanded="false"> <i class="fa fa-envelope-o"> <span
-						class="badge badge-primary">11</span>
-				</i> Dropdown
-			</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-					<a class="dropdown-item" href="#">Action</a> <a
-						class="dropdown-item" href="#">Another action</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#">Something else here</a>
-				</div></li>
+		</ul>
+		<!-- 	<li class="nav-item"><a class="nav-link disabled" href="#"> <i
+				class="fa fa-envelope-o"> <span class="badge badge-warning">11</span>
+			</i> Disabled
+		</a></li>
+		<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
+			href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+			aria-haspopup="true" aria-expanded="false"> <i
+				class="fa fa-envelope-o"> <span class="badge badge-primary">11</span>
+			</i> Dropdown
+		</a>
+			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+				<a class="dropdown-item" href="#">Action</a> <a
+					class="dropdown-item" href="#">Another action</a>
+				<div class="dropdown-divider"></div>
+				<a class="dropdown-item" href="#">Something else here</a>
+			</div></li>
 		</ul>
 		<ul class="navbar-nav ">
 			<li class="nav-item"><a class="nav-link" href="#"> <i
@@ -52,16 +84,16 @@
 					class="fa fa-globe"> <span class="badge badge-success">11</span>
 				</i> Test
 			</a></li>
-		</ul>
-		<form class="form-inline my-2 my-lg-0">
+		</ul> -->
+		<!-- 		<form class="form-inline my-2 my-lg-0">
 			<input class="form-control mr-sm-2" type="text" placeholder="Search"
 				aria-label="Search">
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form>
+		</form> -->
 	</div>
 </nav>
-
-
+</body>
+</html>
 
 
 <!-- 
