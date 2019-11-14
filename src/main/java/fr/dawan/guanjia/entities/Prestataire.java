@@ -3,6 +3,7 @@ package fr.dawan.guanjia.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -25,6 +26,9 @@ public class Prestataire extends Utilisateur {
 	
 	@ManyToOne
 	private Categorie categorie;
+	
+	@ManyToOne(cascade = CascadeType.ALL)  //ajoute
+	private Adresse adresse;
 
 	public String getRaisonSocial() {
 		return raisonSocial;
@@ -64,6 +68,14 @@ public class Prestataire extends Utilisateur {
 
 	public void setCategorie(Categorie categorie) {
 		this.categorie = categorie;
+	}
+
+	public Adresse getAdresse() {
+		return adresse;
+	}
+
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
 	}
 	
 	

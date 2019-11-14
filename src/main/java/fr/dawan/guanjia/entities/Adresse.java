@@ -3,7 +3,6 @@ package fr.dawan.guanjia.entities;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Adresse extends DbObject{
@@ -17,7 +16,7 @@ public class Adresse extends DbObject{
 	private Client client;
 	
 	
-	@OneToOne
+	@ManyToOne(cascade = CascadeType.ALL)
 	private Prestataire prestataire;
 
 	public String getLibelle() {
@@ -50,5 +49,12 @@ public class Adresse extends DbObject{
 	public void setClient(Client client) {
 		this.client = client;
 	}
+	public Prestataire getPrestataire() {
+		return prestataire;
+	}
+	public void setPrestataire(Prestataire prestataire) {
+		this.prestataire = prestataire;
+	}
+
 	
 }

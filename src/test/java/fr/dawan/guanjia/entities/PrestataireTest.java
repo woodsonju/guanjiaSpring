@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import fr.dawan.guanjia.dao.GenericDao;
+import fr.dawan.guanjia.dao.PrestataireDao;
 import junit.framework.TestCase;
 
 public class PrestataireTest extends TestCase{
@@ -11,6 +12,8 @@ public class PrestataireTest extends TestCase{
 	Prestataire prestataire1;
 	Prestataire prestataire2;
 	Prestataire prestataire3;
+	
+	Adresse adressePrestataire;
 
 	
 
@@ -36,18 +39,26 @@ public class PrestataireTest extends TestCase{
 		prestataire3.setPwd("presta2");
 		prestataire3.setStatut(true);
 		prestataire3.setTypeUtilisateur(TypeUtilisateur.PRESTATAIRE);
-
+		       
 		
+		adressePrestataire = new Adresse();
+		adressePrestataire.setCodePostale("31300");
+		adressePrestataire.setPays("France");
+		adressePrestataire.setVille("Toulouse");
+		
+		//adressePrestataire.setPrestataire(prestataire1);
+		prestataire1.setAdresse(adressePrestataire);
 	}
 
 	@Test
 	public void testCreate() {
+				
 		Prestataire p1 = GenericDao.create(prestataire1);
 		Prestataire p2 = GenericDao.create(prestataire2);
 		Prestataire p3 = GenericDao.create(prestataire3);
 
-
-		System.out.println(p1);
+		System.out.println(prestataire1.getAdresse().getId());
+		//System.out.println(adressePrestataire.getPrestataire().getNom());
 		assertEquals("presta1@gmail.com", p1.getEmail());
 		assertEquals("presta2@gmail.com", p3.getEmail());
 	}

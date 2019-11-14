@@ -22,10 +22,10 @@ public class Client extends Utilisateur {
 	@Transient
 	private Map<String, String> preferences;
 	
-	@OneToMany(mappedBy="client",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="client",cascade = CascadeType.PERSIST)
 	private List<Adresse> adressesFacturation = new ArrayList<Adresse>();
 	
-	@OneToMany(mappedBy="client",cascade = CascadeType.ALL)
+	@OneToMany(mappedBy="client",cascade = CascadeType.PERSIST)
 	private List<Adresse> adressesLivraison = new ArrayList<Adresse>();
 
 	
