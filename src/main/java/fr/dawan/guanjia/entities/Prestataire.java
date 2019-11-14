@@ -27,7 +27,8 @@ public class Prestataire extends Utilisateur {
 	@ManyToOne
 	private Categorie categorie;
 	
-	@ManyToOne(cascade = CascadeType.ALL)  //ajoute
+	@OneToOne(optional=true, cascade = CascadeType.ALL)
+	@JoinColumn(name="adresse_id", unique=true, nullable=true, updatable=false)
 	private Adresse adresse;
 
 	public String getRaisonSocial() {

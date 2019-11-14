@@ -48,6 +48,11 @@ public class PrestataireTest extends TestCase{
 		
 		//adressePrestataire.setPrestataire(prestataire1);
 		prestataire1.setAdresse(adressePrestataire);
+		
+		
+		
+		
+		
 	}
 
 	@Test
