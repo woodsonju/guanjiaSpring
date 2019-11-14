@@ -3,6 +3,11 @@ package fr.dawan.guanjia.entities;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
+/**
+ * 
+ * @author Admin stagiaire
+ *
+ */
 @Entity
 @DiscriminatorValue("UTILISATEUR_ADMIN")
 public class Admin extends Utilisateur{
