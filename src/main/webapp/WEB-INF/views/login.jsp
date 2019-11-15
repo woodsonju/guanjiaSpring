@@ -22,10 +22,22 @@
             </div>
             
             <p style="text-align:center"> OR  </p>
+          
+          
+            <!-- TODO: faut "form:" ou pas? -->
+            <select name="statut" id="statut-select" class="form-control">
+            <option value="" disabled selected style="display:none">Merci de choisir votre statut</option>
+            <option value="client">client</option>
+            <option value="commercant">commercant</option>
+            <option value="admin">admin</option>
+            <option value="livreur">livreur</option>
+            </select> 
+            
+            
             
             <!-- TODO:path="email/pwd" doit correspondre le nom exact des attributs dans la classe "Client" (chercher solution pour Utilisateur) -->
-            <form:input path="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus=""/>
-            <form:input path="pwd" type="password" id="inputPassword" class="form-control" placeholder="Password" required=""/>
+            <form:input path="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="true" autofocus=""/>
+            <form:input path="pwd" type="password" id="inputPassword" class="form-control" placeholder="Password" required="true"/>
           
             <form:button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</form:button>
             
@@ -56,6 +68,15 @@
                 
                 <p style="text-align:center">OR</p>
 
+                <!-- TODO: faut "form:" ou pas? -->
+            <select name="statut" id="statut-select" class="form-control">
+            <option value="" disabled selected style="display:none">Merci de choisir votre statut</option>
+            <option value="client">client</option>
+            <option value="commercant">commercant</option>
+            <option value="admin">admin</option>
+            <option value="livreur">livreur</option>
+            </select> 
+            
                 <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
                 <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
                 <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
