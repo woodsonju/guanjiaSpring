@@ -5,10 +5,11 @@
 	<title>Home</title>
 </head>
 <body>
-<h1>
-	Hello world!  
-</h1>
+<h1> Bienvenue chez Guanjia </h1>
 
-<P>  The time on the server is ${serverTime}. </P>
+<button type="button" class="btn btn-primary">Incription</button>
+<button type="button" class="btn btn-primary">Connexion</button>
+
+ <P>  The time on the server is ${serverTime}. </P> 
 </body>
 </html>
