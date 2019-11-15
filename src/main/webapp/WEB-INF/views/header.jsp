@@ -11,8 +11,6 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
-<link rel="stylesheet" type="text/css" href="../../resources/css/header.css"/>
 </head>
 <body>
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
@@ -26,7 +24,7 @@
 			</a></li>
 		</ul>
 
-		<form style = "margin-left: 100px;" class="form-inline my-2 my-lg-0 spacer">
+		<form class="form-inline my-2 my-lg-0 spacer">
 			<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
 				<img src="resources/images/search.png" alt="Logo"
 					style="width: 25px;">
@@ -35,7 +33,7 @@
 				placeholder="Recherche produit ou service" aria-label="Search">
 		</form>
 
-		<form style = "margin-left: 100px;" class="form-inline spacer">
+		<form  class="form-inline spacer">
 			<button class="btn btn-outline-dark my-2 my-sm-0" type="submit">
 				<img src="resources/images/localisation.png" alt="Logo"
 					style="width: 30px;">
@@ -45,14 +43,14 @@
 		</form>
 
 
-		<ul style = "margin-left: 100px;" class="navbar-nav spacer">
+		<ul class="navbar-nav spacer">
 			<li class="nav-item active"><a class="nav-link" href="#"> <img
 					src="resources/images/panier.png" alt="Logo" style="width: 30px;">
 					Panier
 			</a></li>
 		</ul>
 
-		<ul style = "margin-left: 100px;" class="navbar-nav spacer">
+		<ul class="navbar-nav spacer">
 			<li class="nav-item active"><a class="nav-link" href="#"> <img
 					src="resources/images/compte.png" alt="Logo" style="width: 30px;">
 					Compte
