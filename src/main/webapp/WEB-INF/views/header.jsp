@@ -17,7 +17,7 @@
 <body>
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
 	<div
-		class="collapse navbar-collapse col-md-12 col-md-offset-3 col-sm-12 col-xm-12"
+		class=" container-fluid collapse navbar-collapse col-md-12 col-sm-6 col-xm-4"
 		id="navbarSupportedContent">
 		<ul class="navbar-nav">
 			<li class="nav-item active"><a class="nav-link" href="#"> <img
@@ -58,47 +58,9 @@
 					Compte
 			</a></li>
 		</ul>
-		<!-- 	<li class="nav-item"><a class="nav-link disabled" href="#"> <i
-				class="fa fa-envelope-o"> <span class="badge badge-warning">11</span>
-			</i> Disabled
-		</a></li>
-		<li class="nav-item dropdown"><a class="nav-link dropdown-toggle"
-			href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-			aria-haspopup="true" aria-expanded="false"> <i
-				class="fa fa-envelope-o"> <span class="badge badge-primary">11</span>
-			</i> Dropdown
-		</a>
-			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="#">Action</a> <a
-					class="dropdown-item" href="#">Another action</a>
-				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="#">Something else here</a>
-			</div></li>
-		</ul>
-		<ul class="navbar-nav ">
-			<li class="nav-item"><a class="nav-link" href="#"> <i
-					class="fa fa-bell"> <span class="badge badge-info">11</span>
-				</i> Test
-			</a></li>
-			<li class="nav-item"><a class="nav-link" href="#"> <i
-					class="fa fa-globe"> <span class="badge badge-success">11</span>
-				</i> Test
-			</a></li>
-		</ul> -->
-		<!-- 		<form class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="text" placeholder="Search"
-				aria-label="Search">
-			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-		</form> -->
+		
 	</div>
 </nav>
 </body>
 </html>
 
-
-<!-- 
-<header>
-	<img src="resources/images/home.htm" width="50px" height="50px" /> Accueil
-	<img src="resources/images/search.html" width="50px" height="50px" /> <input >
-
-</header> -->
