@@ -8,8 +8,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Dawan <sitemesh:write property='title' /></title>
 	<!-- base sert à définir une référence qui préfixera l'ensemble des liens -->
-<%-- 	<base href="<%=request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/"%>" />
- --%>	
+ 	<base href="<%=request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/"%>" />
+ 	
 	<sitemesh:write property='head' />
 </head>
 
