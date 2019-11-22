@@ -17,14 +17,19 @@
         	<div class="col"></div>
         	<div class="col"></div>
         	<div class="col">
-        		<div> <button type="button" class="btn btn-black">Incription</button></div>
+        		<div> <button type="button" class="btn btn-black"  >Incription</button>
+        		</div>
 			</div>
         	<div class="col">
-        		<div> <button type="button" class="btn btn-black">Connexion</button></div>
+        		<div> <button type="button" class="btn btn-black">Connexion</button>
+        		
+        		</div>
 			</div>	
+			<div class="col"></div>
        </div>
 	</div>
 
+<br>
 <br>
 
 	<div class ="center" style="bold">
@@ -32,24 +37,31 @@
 	</div>
 
 <br>
+<br>
 
     <div class="container-fluid">
        <div class="row">
        
        		<div class="col"></div>
+       		<div class="col"></div>
         	<div class="col"></div>
         	
         	<div class="col">
-        		<img alt="" src="resources/images/market.png">
-				<p>Commerce de proximité</p>
+        		<a href="#" class ="btn btn-light stretched-link"> 
+	        		<img src="resources/images/market.png" width="50" height="50">
+	        		<p>Commerce de proximité</p>
+        		</a>
 			</div>
 			
         	<div class="col">
-           		<img alt="" src="resources/images/child.png">
-				<p>Enfant</p>
+        		<a href="#" class ="btn btn-light stretched-link"> 
+	           		<img alt="" src="resources/images/child.png" width="50" height="50">
+					<p>Enfant</p>
+				</a>
 			</div> 
 			
 			<div class="col"></div>
+        	<div class="col"></div>  
         	<div class="col"></div>  
         	
        </div>
@@ -59,21 +71,26 @@
     	<div class="row">
     	
 			<div class="col"></div>
+			<div class="col"></div>
 			
           	<div class="col" >
-            	<img alt="" src="resources/images/restaurant.png">
+          	<a href="#" class ="btn btn-light stretched-link"> 
+            	<img alt="" src="resources/images/restaurant.png" width="50" height="50">
 				<p>Restauration</p>
+				</a>
 			</div>
 			
 	 		<div class="col"></div>
-	 		
         	<div class="col"></div>
         	
           	<div class="col">
-          		<img alt="" src="resources/images/coursier.png">
+          	<a href="#" class ="btn btn-light stretched-link"> 
+          		<img alt="" src="resources/images/coursier.png" width="50" height="50">
 				<p>Coursier</p>
+				</a>
 			</div> 
 			
+			<div class="col"></div>   
 			<div class="col"></div>   
 			      
 		</div>
@@ -82,23 +99,31 @@
 	<div class="container-fluid">
     	<div class="row">
     	
+    		<div class="col"></div>
+    	
         	<div class="col">
-            	<img alt="" src="resources/images/superette.png">
+        	<a href="#" class ="btn btn-light stretched-link"> 
+            	<img alt="" src="resources/images/superette.png" width="50" height="50">
 				<p>Superette</p>
+				</a>
 			</div>
 			
 			<div class="col"></div>
 			
 	   		<div class="col">
-            	<img alt="" src="C:\Users\Admin stagiaire.DESKTOP-8967908\Desktop\Dawan\S0 PROJET GUANJIA\Icones\panda.jpg"width="200" height="100">
+            	<img alt="" src="resources/images/panda.jpg" width="200" height="100">
 			</div>
 			
 			<div class="col"></div>
 			
           	<div class="col">
-          		<img alt="" src="resources/images/cadeaux.png">
+          	<a href="#" class ="btn btn-light stretched-link"> 
+          		<img alt="" src="resources/images/cadeaux.png"width="50" height="50">
 				<p>Cadeaux</p>
+				</a>
 			</div>  
+			
+			<div class="col"></div>
 			        
     	</div>
     </div>
@@ -107,10 +132,13 @@
     	<div class="row">
     	
     	<div class="col"></div>
+    	<div class="col"></div>
     	
             <div class="col">
-              	<img alt="" src="resources/images/pharmacie.png">
+            <a href="#" class ="btn btn-light stretched-link"> 
+              	<img alt="" src="resources/images/pharmacie.png"width="50" height="50">
 				<p>Pharmacie</p>
+				</a>
 			</div>
 			
 			   <div class="col">
@@ -118,10 +146,13 @@
 			</div>
 			
             <div class="col">
-            	<img alt="" src="resources/images/panier.png">
+            <a href="#" class ="btn btn-light stretched-link"> 
+            	<img alt="" src="resources/images/panier.png"width="50" height="50">
 				<p>Shopping</p>
+				</a>
 			</div> 
 			
+			<div class="col"></div>  
 			<div class="col"></div>  
 			       
         </div>
@@ -131,26 +162,35 @@
          <div class="row">
          
          <div class="col"></div>
-         
+         <div class="col"></div>
          <div class="col"></div>
          
             <div class="col">
-              	<img alt="" src="resources/images/aperitif.png">
+            <a href="#" class ="btn btn-light stretched-link"> 
+              	<img alt="" src="resources/images/aperitif.png"width="50" height="50">
 				<p>Apéritif</p>
+				</a>
 			</div>
 			
             <div class="col">
-            	<img alt="" src="resources/images/cosmétiques.png">
+            <a href="#" class ="btn btn-light stretched-link"> 
+            	<img alt="" src="resources/images/cosmétiques.png"width="50" height="50">
 				<p>Cosmétiques</p>
+				</a>
 			</div> 
 			
 			<div class="col"></div>   
-			      
+			<div class="col"></div>      
 			<div class="col"></div>  
-			       
+			     
+			
         </div>
 	</div>
 
+	<br>
+	<br>
+	<br>
+	<br>
 
 </body>
 </html>
