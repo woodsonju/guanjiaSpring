@@ -12,7 +12,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
-@DiscriminatorValue("UTILISATEUR_PRESTATAIRE")
+@DiscriminatorValue("PRESTATAIRE")
 public class Prestataire extends Utilisateur {
 	private String raisonSocial;
 	private String numTelephone;
