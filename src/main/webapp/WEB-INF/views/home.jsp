@@ -7,9 +7,9 @@
 <body>
 <h1> Bienvenue chez Guanjia </h1>
 
-<button type="button" class="btn btn-primary">Incription</button>
-<button type="button" class="btn btn-primary">Connexion</button>
 
- <P>  The time on the server is ${serverTime}. </P> 
+<P>  The time on the server is ${serverTime}. </P>
+<a href="login">Connection</a>
+
 </body>
 </html>
