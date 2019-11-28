@@ -13,6 +13,7 @@ public class Adresse extends DbObject{
 	private String Ville;
 	private String pays;
 	
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Client client;
 	
