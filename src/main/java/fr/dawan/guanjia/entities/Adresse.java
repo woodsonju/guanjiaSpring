@@ -16,9 +16,10 @@ public class Adresse extends DbObject{
 	private String Ville;
 	private String pays;
 	
+
 	@Enumerated(EnumType.STRING)
 	private TypeAdresse typeAdresse;
-	
+
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Client client;
 	

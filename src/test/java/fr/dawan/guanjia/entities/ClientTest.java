@@ -14,6 +14,7 @@ public class ClientTest extends TestCase {
 	Client client4;
 	Adresse adresseFacturation;
 	Adresse adresseLivraison;
+	
 
 
 
@@ -27,31 +28,31 @@ public class ClientTest extends TestCase {
 		client1.setNumTelephone("0215457545");
 		client1.setTypeUtilisateur(TypeUtilisateur.CLIENT);
 		
-		client2 = new Client();
-		client2.setPrenom("Clement");
-		client2.setNom("Clem");
-		client2.setEmail("clement@gmail.com");
-		client2.setPwd("clement");
-		client2.setNumTelephone("0878746545");
-		client2.setTypeUtilisateur(TypeUtilisateur.CLIENT);
-
-		client3 = new Client();
-		client3.setPrenom("Lilian");
-		client3.setNom("Lili");
-		client3.setEmail("lilian@gmail.com");
-		client3.setPwd("lilian");
-		client3.setNumTelephone("05646489788");
-		client3.setTypeUtilisateur(TypeUtilisateur.CLIENT);
-		
-
-		client4 = new Client();
-		client4.setPrenom("Woodson");
-		client4.setNom("woody");
-		client4.setEmail("woodson@gmail.com");
-		client4.setPwd("woodson");
-		client4.setNumTelephone("07845451445");
-		client4.setTypeUtilisateur(TypeUtilisateur.CLIENT);
-		
+//		client2 = new Client();
+//		client2.setPrenom("Clement");
+//		client2.setNom("Clem");
+//		client2.setEmail("clement@gmail.com");
+//		client2.setPwd("clement");
+//		client2.setNumTelephone("0878746545");
+//		client2.setTypeUtilisateur(TypeUtilisateur.CLIENT);
+//
+//		client3 = new Client();
+//		client3.setPrenom("Lilian");
+//		client3.setNom("Lili");
+//		client3.setEmail("lilian@gmail.com");
+//		client3.setPwd("lilian");
+//		client3.setNumTelephone("05646489788");
+//		client3.setTypeUtilisateur(TypeUtilisateur.CLIENT);
+//		
+//
+//		client4 = new Client();
+//		client4.setPrenom("Woodson");
+//		client4.setNom("woody");
+//		client4.setEmail("woodson@gmail.com");
+//		client4.setPwd("woodson");
+//		client4.setNumTelephone("07845451445");
+//		client4.setTypeUtilisateur(TypeUtilisateur.CLIENT);
+//		
 		adresseFacturation = new Adresse();
 		adresseFacturation.setCodePostale("31300");
 		adresseFacturation.setPays("France");
@@ -76,13 +77,13 @@ public class ClientTest extends TestCase {
 		
 		
 		Client cli1 = GenericDao.create(client1);
-		Client cli2 = GenericDao.create(client2);
-		Client cli3 = GenericDao.create(client3);
-		Client cli4 = GenericDao.create(client4);
+//		Client cli2 = GenericDao.create(client2);
+//		Client cli3 = GenericDao.create(client3);
+//		Client cli4 = GenericDao.create(client4);
 
 		System.out.println(cli1.getNom());
 		assertEquals("jirong@gmail.com", cli1.getEmail());
-		assertEquals("woodson@gmail.com", cli4.getEmail());
+//		assertEquals("woodson@gmail.com", cli4.getEmail());
 	}
 	
 	
