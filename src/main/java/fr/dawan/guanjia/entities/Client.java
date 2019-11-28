@@ -11,7 +11,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 @Entity
-@DiscriminatorValue("UTILISATEUR_CLIENT")
+@DiscriminatorValue("CLIENT")
 public class Client extends Utilisateur {
 	
 	private String numTelephone;

@@ -4,10 +4,9 @@ import org.junit.Before;
 import org.junit.Test;
 
 import fr.dawan.guanjia.dao.GenericDao;
-import fr.dawan.guanjia.dao.PrestataireDao;
 import junit.framework.TestCase;
 
-public class PrestataireTest extends TestCase{
+public class PrestataireDaoTest extends TestCase{
 	
 	Prestataire prestataire1;
 	Prestataire prestataire2;
