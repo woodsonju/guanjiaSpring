@@ -16,7 +16,7 @@ public class Client extends Utilisateur {
 	
 	private String numTelephone;
 	
-	@OneToMany(mappedBy = "client", cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy = "client")
 	private List<Panier> listPanier = new ArrayList<Panier>();
 	
 	@Transient
@@ -69,7 +69,7 @@ public class Client extends Utilisateur {
 	}
 
 	public void addAdressesFacturation(Adresse adresseFacturation) {
-		if(!adressesFacturation.contains(adresseFacturation) && adresseFacturation != null)
+		if(adresseFacturation != null)
 			this.adressesFacturation.add(adresseFacturation);
 	}
 
@@ -85,7 +85,7 @@ public class Client extends Utilisateur {
 	}
 
 	public void addAdressesLivraison(Adresse adresseLivraison) {
-		if(!adressesLivraison.contains(adresseLivraison) && adresseLivraison != null)
+		if( adresseLivraison != null)
 			this.adressesLivraison.add(adresseLivraison);
 	}
 

@@ -1,15 +1,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <html>
+
 <head>
 	<title>Home</title>
+	<link rel="stylesheet" href="/GuanjiaSpring/src/main/webapp/resources/css/home.css">
 	
 </head>
+
 <body>
 
-<br>
+	<div class = "container">
+		<br>
 
-	<div class="container-fluid">
+	<div class="container-fluid Boutons">
        <div class="row">
         	<div class="col"></div>
         	<div class="col"></div>
@@ -22,7 +26,7 @@
 			</div>
         	<div class="col">
         		<div> <button type="button" class="btn btn-black">Connexion</button>
-        		
+        		<a href="login"></a>
         		</div>
 			</div>	
 			<div class="col"></div>
@@ -32,26 +36,29 @@
 <br>
 <br>
 
-	<div class ="center" style="bold">
+	<div class ="titre" style="bold">
 		<h1 align="center"  >Bienvenue chez Guanjia</h1>
 	</div>
 
 <br>
 <br>
 
-    <div class="container-fluid">
+    <div class="container-fluid ">
        <div class="row">
        
        		<div class="col"></div>
        		<div class="col"></div>
         	<div class="col"></div>
         	
-        	<div class="col">
-        		<a href="#" class ="btn btn-light stretched-link"> 
-	        		<img src="resources/images/market.png" width="50" height="50">
-	        		<p>Commerce de proximité</p>
+        	<div class="col" >
+        		<a href="#" class ="btn btn-light stretched-link" > 
+	        		<img src="resources/images/market.png" >
+	        		<p>Com de prox</p>
         		</a>
 			</div>
+			
+			<div class="col"></div>
+			
 			
         	<div class="col">
         		<a href="#" class ="btn btn-light stretched-link"> 
@@ -141,9 +148,13 @@
 				</a>
 			</div>
 			
+			<div class="col"></div>
+			
 			   <div class="col">
               	<p>Don't worry use Guanjia !</p>
 			</div>
+			
+				<div class="col"></div>
 			
             <div class="col">
             <a href="#" class ="btn btn-light stretched-link"> 
@@ -191,6 +202,11 @@
 	<br>
 	<br>
 	<br>
+	
+	</div>
+
 
 </body>
+
+
 </html>
