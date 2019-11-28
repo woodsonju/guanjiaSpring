@@ -11,15 +11,17 @@ import fr.dawan.guanjia.entities.Prestataire;
  * On crée directement son adresse
  */
 public class PrestataireDao {
-	public static void createPrestaire(Prestataire prestataire) {
+	public static void createPrestataire(Prestataire prestataire) {
 		EntityManager em = GenericDao.createEntityManager();
 		EntityTransaction transaction = em.getTransaction();
 		
 		try {
 			transaction.begin();
 			em.persist(prestataire);
+			System.out.println("j'ai ajouté un prestataire" + prestataire.getNom());
 			Adresse adresse = prestataire.getAdresse();
 			em.persist(adresse);
+			System.out.println("j'ai ajouté un prestataire, son adresse est :" + prestataire.getAdresse());
 		} catch (Exception e) {
 			transaction.rollback();
 			e.printStackTrace();

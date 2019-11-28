@@ -1,3 +1,4 @@
+
 package fr.dawan.guanjia.entities;
 
 import java.util.ArrayList;
@@ -7,6 +8,7 @@ import java.util.Map;
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
@@ -22,10 +24,13 @@ public class Client extends Utilisateur {
 	@Transient
 	private Map<String, String> preferences;
 	
-	@OneToMany(mappedBy="client",cascade = CascadeType.PERSIST)
+	@OneToMany(mappedBy="client",cascade = CascadeType.PERSIST,fetch=FetchType.EAGER)
+	private List<Adresse> adresses = new ArrayList<Adresse>();
+	
+	@Transient
 	private List<Adresse> adressesFacturation = new ArrayList<Adresse>();
 	
-	@OneToMany(mappedBy="client",cascade = CascadeType.PERSIST)
+	@Transient
 	private List<Adresse> adressesLivraison = new ArrayList<Adresse>();
 
 	
@@ -40,6 +45,8 @@ public class Client extends Utilisateur {
 	public List<Panier> getListPanier() {
 		return new ArrayList<Panier>(listPanier);
 	}
+	
+	
 
 	public void setListPanier(List<Panier> listPanier) {
 		this.listPanier = listPanier;
@@ -67,9 +74,10 @@ public class Client extends Utilisateur {
 	public List<Adresse> getAdressesFacturation() {
 		return new ArrayList<Adresse>(adressesFacturation);
 	}
+	
 
 	public void addAdressesFacturation(Adresse adresseFacturation) {
-		if(!adressesFacturation.contains(adresseFacturation) && adresseFacturation != null)
+		if(adresseFacturation != null)
 			this.adressesFacturation.add(adresseFacturation);
 	}
 
@@ -79,18 +87,30 @@ public class Client extends Utilisateur {
 	}
 	
 	
-	
 	public List<Adresse> getAdressesLivraison() {
 		return new ArrayList<Adresse>(adressesLivraison);
 	}
 
 	public void addAdressesLivraison(Adresse adresseLivraison) {
-		if(!adressesLivraison.contains(adresseLivraison) && adresseLivraison != null)
+		if(adresseLivraison != null)
 			this.adressesLivraison.add(adresseLivraison);
 	}
 
 	public void removeAdressesLivraison(Adresse adresseLivraison) {
 		this.adressesLivraison.remove(adresseLivraison);
 }
+
+
+	public List<Adresse> getAdresses() {
+		return adresses;
+	}
+
+	public void addAdresses(Adresse adresse) {
+		if(adresse != null)
+			this.adresses.add(adresse);
+		
+	}
+	
+	
 	
 }

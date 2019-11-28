@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import fr.dawan.guanjia.entities.DbObject;
@@ -108,6 +109,17 @@ public class GenericDao {
 		return resultat;
 	}
 	
+	
+	public static <T extends DbObject> void deleteAll(Class<T> clazz) {
+		EntityManager em = createEntityManager();
+		EntityTransaction transaction =em.getTransaction();
+		
+		transaction.begin();
+		Query query = em.createQuery("DELETE FROM " + clazz.getName());
+		query.executeUpdate();
+		transaction.commit();
+		em.close();
+	}
 	
 	
 	public static EntityManager createEntityManager() {
