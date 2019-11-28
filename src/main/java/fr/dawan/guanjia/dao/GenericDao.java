@@ -19,7 +19,7 @@ import fr.dawan.guanjia.entities.DbObject;
 public class GenericDao {
 	
 	public static <T extends DbObject> T create(T entity) {
-		if(entity.getId() == 0) {
+		if(entity != null && entity.getId() == 0) {
 			EntityManager entityManager = createEntityManager();
 			EntityTransaction entityTransaction = entityManager.getTransaction();
 			try {
@@ -94,6 +94,21 @@ public class GenericDao {
 		}
 	}
 
+	public static<T extends DbObject> void deleteAll(Class<T> clazz) {
+		EntityManager em = createEntityManager();
+		EntityTransaction transaction = em.getTransaction();
+		
+		transaction.begin();
+
+		//On crée la requête
+		Query query = em.createQuery("DELETE FROM " + clazz.getName());
+		
+		//On execute la requête et on récupèe le resultat
+		query.executeUpdate();
+		
+		transaction.commit();
+		em.close();
+	}
 	
 	public static<T extends DbObject> List<T> findAll(Class<T> clazz) {
 		List<T> resultat = null;
@@ -109,20 +124,7 @@ public class GenericDao {
 		return resultat;
 	}
 	
-	public static<T extends DbObject> void deleteAll(Class<T> clazz) {
-		
-		EntityManager em = createEntityManager();
-		EntityTransaction transaction = em.getTransaction();
-		transaction.begin();
-		
-		Query query = em.createQuery("Delete FROM" + clazz.getName());
-		query.executeUpdate();
-		
-		transaction.commit();
-		em.close();
-	}
-	
-	
+
 	
 	public static EntityManager createEntityManager() {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("guanjiajpa");

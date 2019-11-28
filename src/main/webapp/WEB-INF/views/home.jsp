@@ -1,3 +1,4 @@
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <html>
@@ -25,8 +26,8 @@
         		</div>
 			</div>
         	<div class="col">
-        		<div> <button type="button" class="btn btn-black">Connexion</button>
-        		<a href="login"></a>
+        		<div> <a href="login"><button type="button" class="btn btn-black">Connexion</button></a>
+        		
         		</div>
 			</div>	
 			<div class="col"></div>
@@ -210,3 +211,4 @@
 
 
 </html>
+
