@@ -18,4 +18,14 @@ public class Enseigne extends DbObject{
 	
 	@ManyToOne
 	private Categorie categorie;
+
+
+	public String getNom() {
+		return nom;
+	}
+
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 }

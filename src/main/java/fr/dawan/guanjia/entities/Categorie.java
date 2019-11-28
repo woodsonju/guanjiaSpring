@@ -19,4 +19,38 @@ public class Categorie extends DbObject{
 	@OneToMany(mappedBy = "categorie")
 	private List<Prestataire> listPrestataire;
 
+
+	public Categorie() {
+		super();
+	}
+
+	public String getLibelle() {
+		return libelle;
+	}
+
+
+	public void setLibelle(String libelle) {
+		this.libelle = libelle;
+	}
+
+
+	public List<Enseigne> getListEnseignes() {
+		return listEnseignes;
+	}
+
+
+	public void setListEnseignes(List<Enseigne> listEnseignes) {
+		this.listEnseignes = listEnseignes;
+	}
+
+
+	public List<Prestataire> getListPrestataire() {
+		return listPrestataire;
+	}
+
+
+	public void setListPrestataire(List<Prestataire> listPrestataire) {
+		this.listPrestataire = listPrestataire;
+	}
+
 }
