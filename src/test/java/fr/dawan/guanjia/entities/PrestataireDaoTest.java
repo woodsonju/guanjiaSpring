@@ -82,7 +82,6 @@ public class PrestataireDaoTest {
 		adressePrestataire.setCodePostale(CODEPOSTALE_ADRESSE_1);
 		adressePrestataire.setPays(PAYS_ADRESSE_1);
 		adressePrestataire.setVille(VILLE_ADRESSE_1);
-		//adressePrestataire.setPrestataire(prestataire1);
 		prestataire1.setAdresse(adressePrestataire);
 
 	}
@@ -108,7 +107,6 @@ public class PrestataireDaoTest {
 		
 		Assert.assertNotNull(p1.getAdresse());
 		
-		//System.out.println(adressePrestataire.getPrestataire().getNom());
 		assertEquals(NOM_PRESTATAIRE_1, p1.getNom());
 		assertEquals(EMAIL_PRESTATAIRE_1, p1.getEmail());
 		assertEquals(PWD_PRESTATAIRE_1, p1.getPwd());
