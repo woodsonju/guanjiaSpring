@@ -25,54 +25,54 @@
 			</div> -->
 			
 			<div class="col-md-4 col-sm-4">
-				<a href="" ><img src="resources/images/categorie_commercedeproximite_boulangerie.jpg" alt="gallery img"></a>
+				<a href="" ><img src="resources/images/categorie_service_aidealapersonne.jpg" alt="gallery img"></a>
 				<div>
-					<h3>Boulangerie</h3>
+					<h3>Aide a la personne</h3>
 					<!-- <span>hamburger / wrap / Lemon</span> -->
 				</div>
-				<a href="" ><img src="resources/images/categorie_commercedeproximite_charcuterie.jpg" alt="gallery img"></a>
+				<a href="" ><img src="resources/images/categorie_service_babysitter.jpg" alt="gallery img"></a>
 				<div>
-					<h3>Charcuterie</h3>
+					<h3>Baby Sitter</h3>
 					<!-- <span>Tomato / Rosemary / Lemon</span> -->
 				</div>
-				<a href="" ><img src="resources/images/categorie_commercedeproximite_cordonnerie.jpg" alt="gallery img"></a>
+				<a href="" ><img src="resources/images/categorie_service_bricoleur.jpg" alt="gallery img"></a>
 				<div>
-					<h3>Cordonnerie</h3>
+					<h3>Bricoleur</h3>
 					<!-- <span>Tomato / Rosemary / Lemon</span> -->
 				</div>
 			</div>
 			
 			<div class="col-md-4 col-sm-4" >
-				<a href="" ><img src="resources/images/categorie_commercedeproximite_serrurier.jpg" alt="gallery img"></a>
+				<a href="" ><img src="resources/images/categorie_service_chauffeur.jpg" alt="gallery img"></a>
 				<div>
-					<h3>Serrurier</h3>
+					<h3>Chauffeur</h3>
 					<!-- <span>Bread / Rosemary / Orange</span> -->
 				</div>
-				<a href="" ><img src="resources/images/categorie_commercedeproximite_poissonnerie.jpg" alt="gallery img"></a>
+				<a href="" ><img src="resources/images/categorie_service_chefcuisinier.jpg" alt="gallery img"></a>
 				<div>
-					<h3>Poissonnerie</h3>
+					<h3>Chef Cuisinier</h3>
 					<!-- <span>Bread / Rosemary / Orange</span> -->
 				</div>
-				<a href="" ><img src="resources/images/categorie_commercedeproximite_pressing.jpg" alt="gallery img"></a>
+				<a href="" ><img src="resources/images/categorie_service_demenageur.jpg" alt="gallery img"></a>
 				<div>
-					<h3>Pressing</h3>
+					<h3>Demenageur</h3>
 					<!-- <span>Tomato / Rosemary / Lemon</span> -->
 				</div>
 			</div>
 			<div class="col-md-4 col-sm-4" >
-				<a href="" ><img src="resources/images/categorie_commercedeproximite_primeur.jpg" alt="gallery img"></a>
+				<a href="" ><img src="resources/images/categorie_service_electricien.jpg" alt="gallery img"></a>
 				<div>
-					<h3>Primeur</h3>
+					<h3>Electricien</h3>
 					<!-- <span>Chicken / Rosemary / Green</span> -->
 				</div>
-				<a href="" ><img src="resources/images/categorie_commercedeproximite_laposte.jpg" alt="gallery img"></a>
+				<a href="" ><img src="resources/images/categorie_service_femmedemenage.jpg" alt="gallery img"></a>
 				<div>
-					<h3>La Poste</h3>
+					<h3>Femme de Menage</h3>
 					<!-- <span>Pasta / Rosemary / Green</span> -->
 				</div>
-				<a href="" ><img src="resources/images/categorie_commercedeproximite_tabac.jpg" alt="gallery img"></a>
+				<a href="" ><img src="resources/images/categorie_service_plombier.jpeg" alt="gallery img"></a>
 				<div>
-					<h3>Tabac</h3>
+					<h3>Plombier</h3>
 					<!-- <span>Tomato / Rosemary / Lemon</span> -->
 				</div>
 			</div>

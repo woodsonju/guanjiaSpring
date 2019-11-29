@@ -11,9 +11,11 @@
 <P>  The time on the server is ${serverTime}. </P>
 <a href="login">Connection</a>
 <br>
-<a href="categorie_restaurant">Categorie Resto</a>
+<a href="categorie/restaurant">Categorie Resto</a>
 <br>
-<a href="categorie_commercedeproximite">Categorie commerce de proximite</a>
+<a href="categorie/commercedeproximite">Categorie commerce de proximite</a>
+<br>
+<a href="categorie/service">Categorie service</a>
 
 
 

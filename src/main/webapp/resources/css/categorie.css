@@ -40,7 +40,10 @@ hr {
 #gallery img {
   width: 100%;
   padding-bottom: 18px;
-/*   object-fit:cover; */
+  border:none;
+/*   border-radius:50% 20% / 10% 40%; */
+  border-radius:10% / 30%;;
+
 }
 #gallery .col-md-4 div {
   position: relative;

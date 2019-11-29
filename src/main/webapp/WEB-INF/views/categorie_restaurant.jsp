@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link href="resources/css/categorieRestaurant.css" rel="stylesheet" >
+<link href="resources/css/categorie.css" rel="stylesheet" >
 
 </head>
 <body>
