@@ -2,8 +2,10 @@
 package fr.dawan.guanjia.entities;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.DiscriminatorValue;
@@ -25,13 +27,13 @@ public class Client extends Utilisateur {
 	private Map<String, String> preferences;
 	
 	@OneToMany(mappedBy="client",cascade = CascadeType.PERSIST,fetch=FetchType.EAGER)
-	private List<Adresse> adresses = new ArrayList<Adresse>();
+	private Set<Adresse> adresses = new HashSet<Adresse>();
 	
 	@Transient
-	private List<Adresse> adressesFacturation = new ArrayList<Adresse>();
+	private Set<Adresse> adressesFacturation = new HashSet<Adresse>();
 	
 	@Transient
-	private List<Adresse> adressesLivraison = new ArrayList<Adresse>();
+	private Set<Adresse> adressesLivraison = new HashSet<Adresse>();
 
 	
 	public String getNumTelephone() {
@@ -101,7 +103,7 @@ public class Client extends Utilisateur {
 }
 
 
-	public List<Adresse> getAdresses() {
+	public Set<Adresse> getAdresses() {
 		return adresses;
 	}
 

@@ -1,4 +1,5 @@
 
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <html>
@@ -52,7 +53,7 @@
         	<div class="col"></div>
         	
         	<div class="col" >
-        		<a href="#" class ="btn btn-light stretched-link" > 
+        		<a href="categorie/commercedeproximite" class ="btn btn-light stretched-link" > 
 	        		<img src="resources/images/market.png" >
 	        		<p>Com de prox</p>
         		</a>
@@ -82,7 +83,7 @@
 			<div class="col"></div>
 			
           	<div class="col" >
-          	<a href="#" class ="btn btn-light stretched-link"> 
+          	<a href="categorie/restaurant" class ="btn btn-light stretched-link"> 
             	<img alt="" src="resources/images/restaurant.png" width="50" height="50">
 				<p>Restauration</p>
 				</a>
@@ -92,7 +93,7 @@
         	<div class="col"></div>
         	
           	<div class="col">
-          	<a href="#" class ="btn btn-light stretched-link"> 
+          	<a href="categorie/service" class ="btn btn-light stretched-link"> 
           		<img alt="" src="resources/images/coursier.png" width="50" height="50">
 				<p>Coursier</p>
 				</a>

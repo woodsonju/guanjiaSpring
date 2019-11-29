@@ -1,6 +1,6 @@
 package fr.dawan.guanjia.dao;
 
-import java.util.List;
+import java.util.Set;
 
 import javax.persistence.EntityManager;
 
@@ -15,18 +15,17 @@ public class ClientDao extends GenericDao {
 		Client client = null;
 		try {
 			client = entityManager.find(Client.class, id);
-			
-			List<Adresse> ls = client.getAdresses();
-			
-			
+
+			Set<Adresse> ls = client.getAdresses();
+
 			for (Adresse adresse : ls) {
-				if(adresse.getTypeAdresse().equals(TypeAdresse.CLIENT_FACTURATION)) {
+				if (adresse.getTypeAdresse().equals(TypeAdresse.CLIENT_FACTURATION)) {
 					client.addAdressesFacturation(adresse);
-				}else if(adresse.getTypeAdresse().equals(TypeAdresse.CLIENT_LIVRAISON)) {
+				} else if (adresse.getTypeAdresse().equals(TypeAdresse.CLIENT_LIVRAISON)) {
 					client.addAdressesLivraison(adresse);
 				}
 			}
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -35,5 +34,5 @@ public class ClientDao extends GenericDao {
 		}
 		return client;
 	}
-	
+
 }

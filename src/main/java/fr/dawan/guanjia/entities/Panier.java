@@ -1,7 +1,9 @@
 package fr.dawan.guanjia.entities;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -19,7 +21,7 @@ public class Panier extends DbObject{
 
 	//PERSIST : Quand on crée un panier dans le BDD, on charge aussi les commandes liée à ce panier. 
 	@OneToMany(mappedBy = "panier", cascade = CascadeType.PERSIST, fetch = FetchType.EAGER) 
-	private List<LigneDeCommande> lignes = new ArrayList<LigneDeCommande>();
+	private Set<LigneDeCommande> lignes = new HashSet<LigneDeCommande>();
 
 	
 	public Panier() {
@@ -27,7 +29,7 @@ public class Panier extends DbObject{
 	}
 
 
-	public Panier(double prixTotal, Client client, List<LigneDeCommande> lignes) {
+	public Panier(double prixTotal, Client client, Set<LigneDeCommande> lignes) {
 		super();
 		this.prixTotal = prixTotal;
 		this.client = client;
