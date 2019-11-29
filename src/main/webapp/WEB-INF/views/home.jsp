@@ -10,6 +10,7 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 <a href="login">Connection</a>
+<a href="compteclient">Compte</a>
 
 </body>
 </html>

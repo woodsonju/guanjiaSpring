@@ -8,10 +8,14 @@ import javax.persistence.OneToOne;
 @Entity
 public class Adresse extends DbObject{
 	
+
 	private String libelle;
 	private String codePostale;
-	private String Ville;
+	private String ville;
 	private String pays;
+	private String nomDeVoie;
+	private int etage;
+	private int numero;
 	
 	
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -40,12 +44,14 @@ public class Adresse extends DbObject{
 	public void setCodePostale(String codePostale) {
 		this.codePostale = codePostale;
 	}
+
 	public String getVille() {
-		return Ville;
+		return ville;
 	}
 	public void setVille(String ville) {
-		Ville = ville;
+		this.ville = ville;
 	}
+	
 	public String getPays() {
 		return pays;
 	}
@@ -59,6 +65,23 @@ public class Adresse extends DbObject{
 		this.client = client;
 	}
 	
-
+	public int getEtage() {
+		return etage;
+	}
+	public void setEtage(int etage) {
+		this.etage = etage;
+	}
+	public int getNumero() {
+		return numero;
+	}
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
 	
+	public String getNomDeVoie() {
+		return nomDeVoie;
+	}
+	public void setNomDeVoie(String nomDeVoie) {
+		this.nomDeVoie = nomDeVoie;
+	}
 }
