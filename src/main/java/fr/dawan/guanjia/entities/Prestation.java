@@ -19,4 +19,20 @@ public class Prestation extends DbObject{
 	@ManyToMany
 	private List<Prestataire> listPrestataire = new ArrayList<Prestataire>();
 
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public double getPrixPrestation() {
+		return prixPrestation;
+	}
+
+	public void setPrixPrestation(double prixPrestation) {
+		this.prixPrestation = prixPrestation;
+	}
+
 }

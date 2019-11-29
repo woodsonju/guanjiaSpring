@@ -11,11 +11,51 @@ public class LigneDeCommande extends DbObject{
 	
 	@ManyToOne
 	private ProduitPresta produitPresta;
-	
+
 	@ManyToOne
 	private Panier panier;
 	
 	@ManyToOne
 	private Prestation prestation;
+	
+	public int getQuantite() {
+		return quantite;
+	}
+
+	public void setQuantite(int quantite) {
+		this.quantite = quantite;
+	}
+
+	public double getPrixTotal() {
+		return prixTotal;
+	}
+
+	public void setPrixTotal(double prixTotal) {
+		this.prixTotal = prixTotal;
+	}
+
+	public ProduitPresta getProduitPresta() {
+		return produitPresta;
+	}
+
+	public void setProduitPresta(ProduitPresta produitPresta) {
+		this.produitPresta = produitPresta;
+	}
+
+	public Panier getPanier() {
+		return panier;
+	}
+
+	public void setPanier(Panier panier) {
+		this.panier = panier;
+	}
+
+	public Prestation getPrestation() {
+		return prestation;
+	}
+
+	public void setPrestation(Prestation prestation) {
+		this.prestation = prestation;
+	}
 	
 }
