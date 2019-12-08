@@ -28,7 +28,7 @@
 			<div class="row my-row">
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12">
 					<div class="card card-outline-secondary">
-						<div class="card-header bg-secondary">
+						<div class="card-header" style="background-color:#E5E1E1 ">
 							<h3 class="mb-0">Coordonnée</h3>
 						</div>
 						<div class="card-body">
@@ -86,7 +86,7 @@
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12">
 					<div class="card card-outline-secondary">
-						<div class="card-header bg-secondary">
+						<div class="card-header" style="background-color:#E4E1E1">
 							<h3 class="mb-0">Connexion au compte</h3>
 						</div>
 						<div class="card-body">
@@ -122,7 +122,7 @@
 			<div class="row my-row"  style="margin-top: 60px">
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12">
 					<div class="card card-outline-secondary">
-						<div class="card-header bg-secondary">
+						<div class="card-header" style="background-color:#E4E1E1">
 							<h3 class="mb-0">Adresse de Livraison</h3>
 						</div>
 						<div class="card-body">
@@ -193,7 +193,7 @@
 				</div>
 				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12">
 					<div class="card card-outline-secondary">
-						<div class="card-header bg-secondary">
+						<div class="card-header" style="background-color:#E4E1E1">
 							<h3 class="mb-0">Adresse de Facturation</h3>
 						</div>
 						<div class="card-body">
@@ -263,7 +263,12 @@
 					</div>
 				</div>
 			</div>
-
+			<div class="row my-row">
+				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-md-6">
+					<input class="btn" style="background-color:#C88A7D; margin-top: 60px" type="submit"
+					value="Valider les modifications" />
+				</div>
+			</div>
 		</form>
 
 	</div>
