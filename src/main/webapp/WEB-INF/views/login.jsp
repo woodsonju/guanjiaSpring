@@ -1,17 +1,35 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ page session="true" %>
 
 <!DOCTYPE html>
 
 <head> 
     <title>Login/Register Form</title>
+    <base href="<%=request.getScheme()+"://"+request.getServerName()
+        +":"+request.getServerPort() + request.getContextPath() + "/"%>" />
 </head>
 <body>
-    <div id="logreg-forms">
+
+<h3>Authentification Client</h3>
+    
+    <form:form method="post" action="checkLogin" modelAttribute="utilisateur-form">
+
+            <br>
+        <form:label path="email">Email : </form:label>
+        <form:input path="email" />
+        <br />
+        <form:label path="pwd">Mot de passe : </form:label>
+        <form:input path="pwd" />
+        <br />
+        <input type="submit" value="Se connecter" />
+    </form:form>
+
+    <%-- <div id="logreg-forms">
     
         <!-- formulaire pour login -->
-        <form:form class="form-signin" method="post" action="checkLogin" modelAttribute="user-form">
+        <form:form class="form-signin" method="post" action="checkLogin" modelAttribute="client-form">
         
             <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
             
@@ -40,6 +58,7 @@
             <form:input path="pwd" type="password" id="inputPassword" class="form-control" placeholder="Password" required="true"/>
           
             <form:button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</form:button>
+      
             
             <!-- TODO: forget password à faire -->
             <a href="#" id="forgot_pswd">Forgot password?</a>
@@ -88,7 +107,7 @@
             <br>
             
     </div>
-    
+     --%>
     <p>${msg}</p>
     
 </body>

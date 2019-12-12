@@ -20,7 +20,6 @@
 	<sitemesh:write property='body' />
 	
 	<%@include file="footer.jsp" %>
-	
 </body>
 
 </html>

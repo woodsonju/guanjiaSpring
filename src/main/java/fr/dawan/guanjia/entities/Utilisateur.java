@@ -13,7 +13,7 @@ import javax.persistence.InheritanceType;
 @Entity
 @Inheritance (strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="utilisateur_discriminator", discriminatorType = DiscriminatorType.STRING)
-public abstract class Utilisateur extends DbObject implements Serializable{
+public  class Utilisateur extends DbObject implements Serializable{
 	
 	private String nom;
 	private String prenom;
