@@ -124,7 +124,7 @@ public class GenericDao {
 		return resultat;
 	}
 	
-	
+
 	
 	public static EntityManager createEntityManager() {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("guanjiajpa");

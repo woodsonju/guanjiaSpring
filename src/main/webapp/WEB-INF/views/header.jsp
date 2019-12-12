@@ -15,15 +15,25 @@
 <link rel="stylesheet" type="text/css" href="../../resources/css/header.css"/>
 </head>
 <body>
+
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
+	
 	<div
-		class="collapse navbar-collapse col-md-12 col-md-offset-3 col-sm-12 col-xm-12"
+		class="collapse navbar-collapse col-md-15 col-md-offset-3 col-sm-12 col-xm-12"
 		id="navbarSupportedContent">
+		
 		<ul class="navbar-nav">
-			<li class="nav-item active"><a class="nav-link" href="#"> <img
-					src="resources/images/home.png" alt="Logo" style="width: 40px;">
-					Accueil
-			</a></li>
+			<li class="nav-item active">
+				<a class="nav-link" href="#"> 
+					<img src="resources/images/home.png" alt="Logo" style="width: 40px;">
+					
+				</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="#">
+				Accueil
+				</a>
+			</li>
 		</ul>
 
 		<form style = "margin-left: 100px;" class="form-inline my-2 my-lg-0 spacer">
@@ -46,17 +56,29 @@
 
 
 		<ul style = "margin-left: 100px;" class="navbar-nav spacer">
-			<li class="nav-item active"><a class="nav-link" href="#"> <img
+			<li class="nav-item active">
+				<a class="nav-link" href="#"> <img
 					src="resources/images/panier.png" alt="Logo" style="width: 30px;">
-					Panier
-			</a></li>
+				</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="#">
+				Panier
+				</a>
+			</li>
 		</ul>
 
 		<ul style = "margin-left: 100px;" class="navbar-nav spacer">
-			<li class="nav-item active"><a class="nav-link" href="#"> <img
+			<li class="nav-item active">
+				<a class="nav-link" href="#"> <img
 					src="resources/images/compte.png" alt="Logo" style="width: 30px;">
-					Compte
-			</a></li>
+				</a>
+			</li>
+			<li class="nav-item active">
+				<a class="nav-link" href="#">
+				Compte
+				</a>
+			</li>
 		</ul>
 
 			<div class="row">

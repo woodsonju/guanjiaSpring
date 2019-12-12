@@ -6,8 +6,9 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+
 @Entity
-public class Adresse extends DbObject{
+public class Adresse extends DbObject {
 	private String libelle;
 	private String nomDeVoie;
 	private String codePostale;
@@ -17,56 +18,73 @@ public class Adresse extends DbObject{
 	private TypeAdresse typeAdresse;
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Client client;
-	@OneToOne(optional=true, mappedBy="adresse", cascade = CascadeType.ALL)
+	@OneToOne(optional = true, mappedBy = "adresse", cascade = CascadeType.ALL)
 	private Prestataire prestataire;
+
 	public Prestataire getPrestataire() {
 		return prestataire;
 	}
+
 	public void setPrestataire(Prestataire prestataire) {
 		this.prestataire = prestataire;
 	}
+
 	public String getLibelle() {
 		return libelle;
 	}
+
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
+
 	public String getCodePostale() {
 		return codePostale;
 	}
+
 	public void setCodePostale(String codePostale) {
 		this.codePostale = codePostale;
 	}
+
 	public String getVille() {
 		return Ville;
 	}
+
 	public void setVille(String ville) {
 		Ville = ville;
 	}
+
 	public String getPays() {
 		return pays;
 	}
+
 	public void setPays(String pays) {
 		this.pays = pays;
 	}
+
 	public Client getClient() {
 		return client;
 	}
+
 	public void setClient(Client client) {
 		this.client = client;
 	}
+
 	public String getNomDeVoie() {
 		return nomDeVoie;
 	}
+
 	public void setNomDeVoie(String nomDeVoie) {
 		this.nomDeVoie = nomDeVoie;
 	}
+
 	public TypeAdresse getTypeAdresse() {
 		return typeAdresse;
 	}
+
 	public void setTypeAdresse(TypeAdresse typeAdresse) {
 		this.typeAdresse = typeAdresse;
 	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -78,6 +96,7 @@ public class Adresse extends DbObject{
 		result = prime * result + ((pays == null) ? 0 : pays.hashCode());
 		return result;
 	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -114,4 +133,5 @@ public class Adresse extends DbObject{
 			return false;
 		return true;
 	}
+
 }

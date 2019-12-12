@@ -2,10 +2,12 @@
 	pageEncoding="UTF-8"%>
 	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <!DOCTYPE html>
 <html>
+
 <head>
 <meta charset="UTF-8">
 <title>home</title>
@@ -191,8 +193,11 @@
 <head>
 	<title>Home</title>
 	<link rel="stylesheet" href="/GuanjiaSpring/src/main/webapp/resources/css/home.css">
+<<<<<<< HEAD
 	 <base href="<%=request.getScheme()+"://"+request.getServerName()
         +":"+request.getServerPort() + request.getContextPath() + "/"%>" />
+=======
+>>>>>>> 21c609eb9ed5da574472c95edb967a0903278216
 	
 </head>
 
@@ -214,6 +219,10 @@
 			</div>
         	<div class="col">
         		<div> <a href="login"><button type="button" class="btn btn-black">Connexion</button></a>
+<<<<<<< HEAD
+=======
+        		
+>>>>>>> 21c609eb9ed5da574472c95edb967a0903278216
         		</div>
 			</div>	
 			<div class="col"></div>
@@ -366,14 +375,23 @@
             <div class="col">
             <a href="#" class ="btn btn-light stretched-link"> 
               	<img alt="" src="resources/images/aperitif.png"width="50" height="50">
+<<<<<<< HEAD
 				<p>ApÃ©ritif</p>
+=======
+				<p>Ap�ritif</p>
+>>>>>>> 21c609eb9ed5da574472c95edb967a0903278216
 				</a>
 			</div>
 			
             <div class="col">
             <a href="#" class ="btn btn-light stretched-link"> 
+<<<<<<< HEAD
             	<img alt="" src="resources/images/cosmÃ©tiques.png"width="50" height="50">
 				<p>CosmÃ©tiques</p>
+=======
+            	<img alt="" src="resources/images/cosm�tiques.png"width="50" height="50">
+				<p>Cosm�tiques</p>
+>>>>>>> 21c609eb9ed5da574472c95edb967a0903278216
 				</a>
 			</div> 
 			
@@ -398,4 +416,7 @@
 
 </html>
 
+<<<<<<< HEAD
  --%>
+=======
+>>>>>>> 21c609eb9ed5da574472c95edb967a0903278216
