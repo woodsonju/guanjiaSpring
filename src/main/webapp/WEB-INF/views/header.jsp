@@ -58,7 +58,25 @@
 					Compte
 			</a></li>
 		</ul>
-		<!-- 	<li class="nav-item"><a class="nav-link disabled" href="#"> <i
+
+			<div class="row">
+				<div class="col-lg-8 col-xs-1"></div>
+				<div class="col">
+					<div>
+						<a></a>
+						<button type="button" class="btn btn-black">Incription</button>
+					</div>
+				</div>
+				<div class="col">
+					<div>
+						<div>
+							<a href="login"><button type="button" class="btn btn-black">Connexion</button></a>
+						</div>
+					</div>
+					<div class="col-lg-2 col-xs-1"></div>
+				</div>
+			</div>
+			<!-- 	<li class="nav-item"><a class="nav-link disabled" href="#"> <i
 				class="fa fa-envelope-o"> <span class="badge badge-warning">11</span>
 			</i> Disabled
 		</a></li>

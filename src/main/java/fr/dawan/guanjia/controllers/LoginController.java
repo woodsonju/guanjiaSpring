@@ -65,13 +65,13 @@ public class LoginController {
 
 		}
 
-//		if(c.getEmail().contentEquals("client1@gmail.com") && c.getPwd().contentEquals("client1")) {
-//			return "espace-client";
-//		}else {
-//			m.addAttribute("msg", "mot de passe ou identifiant non correct");
-//			m.addAttribute("user-form", c);
-//			return "login";
-//		}
+	}
+	
+	
+	@GetMapping(value="/disconnect")
+	public String logout(HttpSession session, Model model) {
+		session.invalidate();
+		return "home";
 	}
 
 }
