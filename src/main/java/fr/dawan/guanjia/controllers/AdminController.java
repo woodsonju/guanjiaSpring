@@ -38,6 +38,18 @@ public class AdminController {
 	}
 
 	
+	@GetMapping("/delete/{id}")
+	public String deleteUsers(@PathVariable(name="id") long id, Model m) {
+        int res = utilisateurDao.deleteById(id);
+        if(res>0) {
+        	m.addAttribute("msg","Utilisateur n°" + id + " a été supprimé");
+        }
+        //TODO: comment récupérer "max" (nombre de lignes à afficher par page)
+		return showAllUsers(m, 1, 3);
+	}
+	
+	
+
 
 
 
