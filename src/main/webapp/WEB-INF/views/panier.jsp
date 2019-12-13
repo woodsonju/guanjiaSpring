@@ -1,11 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+<html>
+<head>
 <title>W3.CSS</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+</head>
+<body>
 
 <div class="col-md-12 center">
 	<h2 class="title-1">Votre panier :</h2>
@@ -14,22 +19,22 @@
 	<tr>
 		<th>ID Produit</th>
 		<th>Prestation</th>
-		<th>Prix/unité</th>
+		<th>Prix/unit&eacute; &euro;</th>
 		<th></th>
-		<th>Quantité</th>
+		<th>Quantit&eacute;</th>
 		<th></th>
-		<th>Total ligne</th>
+		<th>Total ligne &euro;</th>
 	</tr>
 
 	<c:forEach items="${ mesLignes }" var="ligne">
 		<tr>
 			<td>${ ligne.prestation.description }</td>
 			<td><strong>Prestation</strong></td>
-			<td><span class="price">${ ligne.prestation.prixPrestation }</span></td>
-			<td><button type="button" class="w3-circle w3-blue"quantiter: ${ moin }>-</td>
+			<td class="price"><strong> <fmt:formatNumber value="${ ligne.prestation.prixPrestation}" pattern="##.##" />&euro;</strong></td>
+			<td><button type="button" class="w3-circle w3-blue">-</button></td>
 			<td><span class="Quantité">${ ligne.quantite }</span>
-				<button type="button" class="w3-circle w3-green"quantiter: ${ add }>+</button></td>
-			<td><span class="price">${ ligne.prixTotal }</span></td>
+				<button type="button" class="w3-circle w3-green">+</button></td>
+			<td class="price" ><strong><fmt:formatNumber value="${ ligne.prixTotal }" pattern="#####.##" /></strong></td>
 			<td><div class="dsp-cell cell-remove">
 					<a data-ajax="true"
 						data-ajax-complete="completeAjaxAfterItemAction"
@@ -51,7 +56,7 @@
 		<strong>Total / Presentation</strong>
 		<table class="w3-table">
 			<tr>
-				<th>${result}</th>
+				<th class="price"><fmt:formatNumber value="${result}" pattern="##.##" />&euro;</th>
 			</tr>
 		</table>
 	</div>
@@ -102,3 +107,6 @@
 
 
 
+</div>
+</body>
+</html>
