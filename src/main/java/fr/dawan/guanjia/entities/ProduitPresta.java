@@ -77,5 +77,4 @@ public class ProduitPresta extends DbObject{
 		return true;
 	}
 
-	
 }
