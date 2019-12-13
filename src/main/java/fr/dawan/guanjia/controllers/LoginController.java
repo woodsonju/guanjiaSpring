@@ -1,5 +1,4 @@
 package fr.dawan.guanjia.controllers;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,17 +8,19 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import fr.dawan.guanjia.dao.UtilisateurDao;
-import fr.dawan.guanjia.entities.TypeUtilisateur;
 import fr.dawan.guanjia.entities.Utilisateur;
 
-@Controller
-public class LoginController {
 
+@Controller
+@SessionAttributes("isConnected")
+public class LoginController {
+	
 	@Autowired
 	UtilisateurDao utilisateurDao;
-
+		
 	// @RequestMapping(value = "/login", method = RequestMethod.GET)
 	@GetMapping(value = "/login")
 	public String showLogin(Model m) {
@@ -27,7 +28,7 @@ public class LoginController {
 		// Aller sur login.jsp avec "user-form"
 		return "login";
 	}
-
+	
 	// @RequestMapping(value = "/checkLogin", method = RequestMethod.POST)
 	@PostMapping(value = "/checkLogin")
 	public String verifLogin(Model model, HttpSession session, @ModelAttribute("utilisateur-form") Utilisateur u,
@@ -42,7 +43,7 @@ public class LoginController {
 			if (dbClient != null && dbClient.getPwd().contentEquals(u.getPwd())) {
 				session.setAttribute("utilisateur_id", dbClient.getId());
 				session.setAttribute("utilisateur_name", dbClient.getNom());
-
+				model.addAttribute("isConnected", true);
 				switch (dbClient.getTypeUtilisateur()) {
 				case CLIENT:
 					result1 = "home";
@@ -50,28 +51,28 @@ public class LoginController {
 				case PRESTATAIRE:
 					result1 = "comptePrestataire";
 					break;
-
 				case ADMIN:
 					result1 = "admin";
 					break;
 				}
-
 				return result1;
 			} else {
 				model.addAttribute("msg", "Erreur d'authentification");
 				model.addAttribute("utilisateur-form", u);
 				return "login";
 			}
-
 		}
-
 	}
 	
-	
-	@GetMapping(value="/disconnect")
+	@GetMapping(value="/logout")
 	public String logout(HttpSession session, Model model) {
 		session.invalidate();
+		model.addAttribute("isConnected", false);
 		return "home";
 	}
-
+	
+	@ModelAttribute("isConnected")
+	public Boolean initSessionIsConnected() {
+		return false;
+	}
 }
