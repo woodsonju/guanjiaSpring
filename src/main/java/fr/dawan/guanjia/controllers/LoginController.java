@@ -17,6 +17,8 @@ import fr.dawan.guanjia.entities.Utilisateur;
 @Controller
 public class LoginController {
 
+	//merci de supprimer cette phrase
+	
 	@Autowired
 	UtilisateurDao utilisateurDao;
 
@@ -52,7 +54,7 @@ public class LoginController {
 					break;
 
 				case ADMIN:
-					result1 = "admin";
+					result1 = ("redirect:/admin/1/3");
 					break;
 				}
 
