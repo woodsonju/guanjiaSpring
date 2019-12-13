@@ -13,6 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
+
 @Entity
 @DiscriminatorValue("CLIENT")
 public class Client extends Utilisateur {
@@ -33,85 +34,57 @@ public class Client extends Utilisateur {
 	
 	@Transient
 	private Set<Adresse> adressesLivraison = new HashSet<Adresse>();
-
 	
 	public String getNumTelephone() {
 		return numTelephone;
 	}
-
 	public void setNumTelephone(String numTelephone) {
 		this.numTelephone = numTelephone;
 	}
-
 	public List<Panier> getListPanier() {
 		return new ArrayList<Panier>(listPanier);
 	}
-	
-	
-
 	public void setListPanier(List<Panier> listPanier) {
 		this.listPanier = listPanier;
 	}
-
 	public void addPanier(Panier panier) {
 		if(!listPanier.contains(panier) && panier != null)
 			this.listPanier.add(panier);
 	}
-	
 	public void removePanier(Panier panier) {
 		this.listPanier.remove(panier);
 	}
-	
 	public Map<String, String> getPreferences() {
 		return preferences;
 	}
-
 	public void setPreferences(Map<String, String> preferences) {
 		this.preferences = preferences;
 	}
-
-	
-	
 	public List<Adresse> getAdressesFacturation() {
 		return new ArrayList<Adresse>(adressesFacturation);
 	}
-	
-
 	public void addAdressesFacturation(Adresse adresseFacturation) {
 		if(adresseFacturation != null)
 			this.adressesFacturation.add(adresseFacturation);
 	}
-
-	
 	public void removeAdressesFacturation(Adresse adresseFacturation) {
 			this.adressesFacturation.remove(adresseFacturation);
 	}
-	
-	
 	public List<Adresse> getAdressesLivraison() {
 		return new ArrayList<Adresse>(adressesLivraison);
 	}
-
 	public void addAdressesLivraison(Adresse adresseLivraison) {
 		if(adresseLivraison != null)
 			this.adressesLivraison.add(adresseLivraison);
 	}
-
 	public void removeAdressesLivraison(Adresse adresseLivraison) {
 		this.adressesLivraison.remove(adresseLivraison);
 }
-
-
 	public Set<Adresse> getAdresses() {
 		return adresses;
 	}
-
 	public void addAdresses(Adresse adresse) {
 		if(adresse != null)
 			this.adresses.add(adresse);
-		
 	}
-	
-	
-	
 }
