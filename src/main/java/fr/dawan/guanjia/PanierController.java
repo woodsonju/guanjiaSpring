@@ -84,6 +84,7 @@ public class PanierController {
 		for(int i=0; i < lignes.size(); i++) {
 			result += lignes.get(i).getPrixTotal();
 		}
+
 //		for(int i=0; i < lignes.size(),lignes.size(moin); i++) {
 //			result += lignes.get(i).getQuantite();
 //		}
