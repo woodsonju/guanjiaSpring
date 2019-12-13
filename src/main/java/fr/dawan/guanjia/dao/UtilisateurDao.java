@@ -25,6 +25,22 @@ public class UtilisateurDao extends GenericDao {
 			u = utilisateurs.get(0);	
 		return u;
 	}
+
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly = true)
+	public List<Utilisateur> findAllPagination(int start, int max) {
+		List<Utilisateur> ls = em.createQuery("FROM Utilisateur u")
+				               .setFirstResult(start)
+				               .setMaxResults(max)
+				               .getResultList();
+		return ls;
+	}
+
+	
+	public Long count() {
+		Long nb = (Long) em.createQuery("SELECT COUNT(u.id) FROM Utilisateur u").getSingleResult();
+		return nb;
+	}
 	
 	
 }
