@@ -16,60 +16,64 @@
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <link rel="stylesheet" type="text/css"
-	href="../../resources/css/header.css" />
+	href="../../resources/css/footer.css" />
 
 </head>
 
 <body>
 
-<footer>
+	<footer id="footer1">
 
-<div class="container-fluid">
-	<div class="row">
-	
-	<div class="col"></div>
-	
-	<div class="col">
-		<p>NOUS REJOINDRE</p>
-		<div><a href="#">Partenaire</a></div>
-		<div><a href="#">Coursier</a></div>
-	</div>
-	
-	<div class="col"></div>
-	
-	<div class="col">
-		<p>Aide</p>
-		<div><a href="#">Foire aux questions</a></div>
-		<div><a href="#">Contact</a></div>
-	</div>
-	
-	<div class="col"></div>
-	
-	<div class="col">
-		<p>MENTIONS LEGALES</p>
-		<div><a href="#">Conditons générales d'utilisation</a></div>
-		<div><a href="#">Politique de confidentialité</a></div>
-	</div>
-		
-	<div class="col"></div>	
-		
-	<div class="col">
-		<p>NOUS SUIVRE</p>
-		<div><a href="#">Instagram</a></div>
-		<div><a href="#">Twitter</a></div>
-		<div><a href="#">Facebook</a></div>	
-	</div>
-	
-	<div class="col"></div>
-	
-	</div>
-</div>
+		<div class="container text-center text-md-left">
 
-<br>
-<br>
+			<div class="row">
 
-	
-</footer>
+				<div class="col-md-3 mx-auto">
+					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">NOUS REJOINDRE</h5>
+					<ul class="list-unstyled">
+						<li><a href="#!">Partenaires</a></li>
+						<li><a href="#!">Coursiers</a></li>
+					</ul>
+				</div>
+
+				<hr class="clearfix w-100 d-md-none">
+
+				<div class="col-md-3 mx-auto">
+					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">AIDE</h5>
+					<ul class="list-unstyled">
+						<li><a href="#!">Foire aux questions</a></li>
+						<li><a href="#!">Contact</a></li>
+					</ul>
+				</div>
+
+				<hr class="clearfix w-100 d-md-none">
+
+				<div class="col-md-3 mx-auto">
+					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">MENTIONS LEGALES</h5>
+					<ul class="list-unstyled">
+						<li><a href="#!">Conditons générales d'utilisation</a></li>
+						<li><a href="#!">Politique de confidentialité</a></li>
+					</ul>
+				</div>
+
+				<hr class="clearfix w-100 d-md-none">
+
+				<div class="col-md-3 mx-auto">
+					<h5 class="font-weight-bold text-uppercase mt-3 mb-4">NOUS SUIVRE</h5>
+					<ul class="list-unstyled">
+						<li><a href="#!">Instagram</a></li>
+						<li><a href="#!">Twitter</a></li>
+						<li><a href="#!">Facebook</a></li>
+					</ul>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="footer-copyright text-center py-3">© 2019 Copyright : GUANJIA</div>
+
+	</footer>
 
 </body>
 </html>
