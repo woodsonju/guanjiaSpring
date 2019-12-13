@@ -12,11 +12,12 @@
 </head>
 <body>
 
-	<div class="col-md-12 center">
-		<h2 class="title-1" style="text-align: center">Votre panier :</h2>
+	<div class="col-md-12">
+		<h2 style="text-align: center">Votre panier</h2>
 	</div>
 	<table class="w3-table">
 		<tr>
+			<th></th>
 			<th>ID Produit</th>
 			<th>Prestation</th>
 			<th>Prix/unit&eacute; &euro;</th>
@@ -24,10 +25,12 @@
 			<th>Quantit&eacute;</th>
 			<th></th>
 			<th>Total ligne &euro;</th>
+			<th></th>
 		</tr>
 
 		<c:forEach items="${ mesLignes }" var="ligne">
 			<tr>
+				<td></td>
 				<td>${ ligne.prestation.description }</td>
 				<td><strong>Prestation</strong></td>
 				<td class="price"><strong> <fmt:formatNumber
@@ -38,42 +41,68 @@
 				<td><button type="button" class="w3-circle w3-green">+</button></td>
 				<td class="price"><strong><fmt:formatNumber
 							value="${ ligne.prixTotal }" pattern="#####.##" /></strong></td>
-				<td><div class="dsp-cell cell-remove">
-						<a data-ajax="true"
-							data-ajax-complete="completeAjaxAfterItemAction"
-							data-ajax-loading="#ajaxWait" data-ajax-method="POST"
-							href="/fr-fr/Cart/RemoveItem/AR201901020017"> <span
-							class="icon icon-close"></span></a>
+				<td class="dsp-cell cell-remove">
+						<a data-ajax="true"> <span class="icon icon-close"></span></a>
 						<c:url value="/presentation" context="/springmvc" var="urleffacer" />
 						<a type="button" class="btn btn-success" href="${urleffacer}">effacer</a>
-					</div>
 				<td>
+				<td></td>
 			</tr>
 		</c:forEach>
-		<tr>
 	</table>
 
-	<div class="w3-row">
-		<div class="w3-container w3-twothird "></div>
-		<div class="w3-green w3-container w3-third">
-			<strong>Total / Presentation</strong>
-			<table class="w3-table">
+	<div class="row">
+		<div class="col-sm-8"></div>
+		<div class="w3-container w3-third">
+			<a>Total / Panier</a>
+			<table class="col-sm-3 " style="background-color: green;">
 				<tr>
-					<th class="price"><fmt:formatNumber value="${result}"
-							pattern="##.##" />&euro;</th>
+					<td class="price"><fmt:formatNumber value="${result}"
+							pattern="##.##" />&euro;</td>
+				</tr>
+			</table>
+			<table>
+				<tr>
+					<td>
+						<button type="button" class="col-ms-4 btn btn-success">VALIDER</button>
+					</td>
 				</tr>
 			</table>
 		</div>
 	</div>
 
+	<!-- 	<div class="container"> -->
+
+	<!-- 		<div class="row"> -->
+	<!-- 			<div class="col-sm-8"></div> -->
+	<!-- 			<button type="button" class="btn btn-success">Ajouter -->
+	<!-- 				produit</button> -->
+
+	<!-- 			<table class="w3-container w3-third"> -->
+	<!-- 				<tr> -->
+	<!-- 					<td><div class="col-sm-3"></div></td> -->
+
+	<!-- 					<td><button type="button" class="btn btn-success">VALIDER</button></td> -->
+	<!-- 					<td><div class="col-sm-3"></div></td> -->
+	<!-- 				</tr> -->
+	<!-- 			</table> -->
+	<!-- 		</div> -->
+	<!-- 	</div> -->
+
 	<div class="container">
-		<div class="row">
-				<button type="button" class="btn btn-success">Ajouter produit</button>
-			<div class="col-lg-8"></div>
-			<button type="button" class="btn btn-success">VALIDER</button>
-			<div class="col-lg-2 text-align: right"></div>
+		<div class="col-lg-12 "></div>
+		<div class="w3-table">
+			<table>
+				<tr>
+					<td>
+						<button type="button" class="col-ms-4 btn btn-success">Ajouter
+							produit</button>
+					</td>
+				<tr>
+			</table>
 		</div>
 	</div>
+
 
 	<section class="version desktop">
 		<div class="container-fluid">
@@ -102,9 +131,5 @@
 			</div>
 		</div>
 	</section>
-
-
-
-	</div>
 </body>
 </html>
