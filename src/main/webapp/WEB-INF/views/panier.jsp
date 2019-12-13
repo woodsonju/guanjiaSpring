@@ -1,6 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<script
+	src="//GuanjiaSpring/src/main/webapp/resources/js/quantiterpanier.js"></script>
+
 <html>
 <head>
 <title>W3.CSS</title>
@@ -17,36 +27,53 @@
 	</div>
 	<table class="w3-table">
 		<tr>
-			<th></th>
 			<th>ID Produit</th>
 			<th>Prestation</th>
 			<th>Prix/unit&eacute; &euro;</th>
-			<th></th>
 			<th>Quantit&eacute;</th>
-			<th></th>
 			<th>Total ligne &euro;</th>
-			<th></th>
 		</tr>
 
 		<c:forEach items="${ mesLignes }" var="ligne">
 			<tr>
-				<td></td>
+
 				<td>${ ligne.prestation.description }</td>
 				<td><strong>Prestation</strong></td>
 				<td class="price"><strong> <fmt:formatNumber
 							value="${ ligne.prestation.prixPrestation}" pattern="##.##" />&euro;
 				</strong></td>
-				<td><button type="button" class="w3-circle w3-blue">-</button></td>
-				<td><span class="Quantité">${ ligne.quantite }</span></td>
-				<td><button type="button" class="w3-circle w3-green">+</button></td>
+				<td>
+					<table>
+						<tr>
+							<td>
+								<div class="input-group">
+									<span class="input-group-btn">
+										<button type="button"
+											class="quantity-left-minus btn btn-danger btn-number"
+											data-type="minus" data-field="">
+											<span class="glyphicon glyphicon-minus">-</span>
+										</button>
+										<div class="col-sm-1" />
+									</span> <input type="text" id="quantity" name="quantity"
+										class="form-control input-number" value="${ligne.quantite}"
+										min="1" max="100"> <span class="input-group-btn">
+										<button type="button"
+											class="quantity-right-plus btn btn-success btn-number"
+											data-type="plus" data-field="">
+											<span class="glyphicon glyphicon-plus">+</span>
+										</button>
+									</span>
+								</div>
+							</td>
+						</tr>
+					</table>
 				<td class="price"><strong><fmt:formatNumber
 							value="${ ligne.prixTotal }" pattern="#####.##" /></strong></td>
-				<td class="dsp-cell cell-remove">
-						<a data-ajax="true"> <span class="icon icon-close"></span></a>
-						<c:url value="/presentation" context="/springmvc" var="urleffacer" />
-						<a type="button" class="btn btn-success" href="${urleffacer}">effacer</a>
+				<td class="dsp-cell cell-remove"><a data-ajax="true"> <span
+						class="icon icon-close"></span></a> <c:url value="/presentation"
+						context="/springmvc" var="urleffacer" /> <a type="button"
+					class="btn btn-success" href="${urleffacer}">effacer</a>
 				<td>
-				<td></td>
 			</tr>
 		</c:forEach>
 	</table>
