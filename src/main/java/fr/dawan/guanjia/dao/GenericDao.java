@@ -125,7 +125,6 @@ public class GenericDao {
 	}
 	
 
-	
 	public static EntityManager createEntityManager() {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("guanjiajpa");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();

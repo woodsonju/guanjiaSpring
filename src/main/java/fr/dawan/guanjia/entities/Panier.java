@@ -76,4 +76,5 @@ public class Panier extends DbObject{
 			this.lignes.remove(ligne);
 		}
 	}
+
 }

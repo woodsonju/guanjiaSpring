@@ -30,5 +30,4 @@ public class PrestataireDao extends GenericDao{
 		return p;
 	}
 	
-	
 }
