@@ -43,4 +43,14 @@ public class UtilisateurDao extends GenericDao {
 	}
 	
 	
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly = false)
+	public int deleteById(long id) {
+		int nb = em.createQuery("DELETE FROM Utilisateur u WHERE u.id= :id")
+		.setParameter("id", id).executeUpdate();
+		return nb;
+		
+	}
+	
+	
 }
