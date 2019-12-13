@@ -17,7 +17,7 @@ import fr.dawan.guanjia.entities.Utilisateur;
 @Controller
 @SessionAttributes("isConnected")
 public class LoginController {
-	
+
 	@Autowired
 	UtilisateurDao utilisateurDao;
 		
@@ -52,7 +52,7 @@ public class LoginController {
 					result1 = "comptePrestataire";
 					break;
 				case ADMIN:
-					result1 = "admin";
+					result1 = ("redirect:/admin/1/3");
 					break;
 				}
 				return result1;
