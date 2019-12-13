@@ -13,7 +13,7 @@ import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
-
+//client
 @Entity
 @DiscriminatorValue("CLIENT")
 public class Client extends Utilisateur {
