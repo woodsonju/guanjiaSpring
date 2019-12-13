@@ -12,101 +12,99 @@
 </head>
 <body>
 
-<div class="col-md-12 center">
-	<h2 class="title-1">Votre panier :</h2>
-</div>
-<table class="w3-table">
-	<tr>
-		<th>ID Produit</th>
-		<th>Prestation</th>
-		<th>Prix/unit&eacute; &euro;</th>
-		<th></th>
-		<th>Quantit&eacute;</th>
-		<th></th>
-		<th>Total ligne &euro;</th>
-	</tr>
-
-	<c:forEach items="${ mesLignes }" var="ligne">
+	<div class="col-md-12 center">
+		<h2 class="title-1" style="text-align: center">Votre panier :</h2>
+	</div>
+	<table class="w3-table">
 		<tr>
-			<td>${ ligne.prestation.description }</td>
-			<td><strong>Prestation</strong></td>
-			<td class="price"><strong> <fmt:formatNumber value="${ ligne.prestation.prixPrestation}" pattern="##.##" />&euro;</strong></td>
-			<td><button type="button" class="w3-circle w3-blue">-</button></td>
-			<td><span class="Quantité">${ ligne.quantite }</span>
-				<button type="button" class="w3-circle w3-green">+</button></td>
-			<td class="price" ><strong><fmt:formatNumber value="${ ligne.prixTotal }" pattern="#####.##" /></strong></td>
-			<td><div class="dsp-cell cell-remove">
-					<a data-ajax="true"
-						data-ajax-complete="completeAjaxAfterItemAction"
-						data-ajax-loading="#ajaxWait" data-ajax-method="POST"
-						href="/fr-fr/Cart/RemoveItem/AR201901020017"> <span
-						class="icon icon-close"></span></a>
-					<c:url value="/presentation" context="/springmvc" var="urleffacer" />
-					<a type="button" class="btn btn-success" href="${urleffacer}">effacer</a>
-				</div>
-			<td>
+			<th>ID Produit</th>
+			<th>Prestation</th>
+			<th>Prix/unit&eacute; &euro;</th>
+			<th></th>
+			<th>Quantit&eacute;</th>
+			<th></th>
+			<th>Total ligne &euro;</th>
 		</tr>
-	</c:forEach>
-	<tr>
-</table>
 
-<div class="w3-row">
-	<div class="w3-container w3-twothird "></div>
-	<div class="w3-green w3-container w3-third">
-		<strong>Total / Presentation</strong>
-		<table class="w3-table">
+		<c:forEach items="${ mesLignes }" var="ligne">
 			<tr>
-				<th class="price"><fmt:formatNumber value="${result}" pattern="##.##" />&euro;</th>
+				<td>${ ligne.prestation.description }</td>
+				<td><strong>Prestation</strong></td>
+				<td class="price"><strong> <fmt:formatNumber
+							value="${ ligne.prestation.prixPrestation}" pattern="##.##" />&euro;
+				</strong></td>
+				<td><button type="button" class="w3-circle w3-blue">-</button></td>
+				<td><span class="Quantité">${ ligne.quantite }</span></td>
+				<td><button type="button" class="w3-circle w3-green">+</button></td>
+				<td class="price"><strong><fmt:formatNumber
+							value="${ ligne.prixTotal }" pattern="#####.##" /></strong></td>
+				<td><div class="dsp-cell cell-remove">
+						<a data-ajax="true"
+							data-ajax-complete="completeAjaxAfterItemAction"
+							data-ajax-loading="#ajaxWait" data-ajax-method="POST"
+							href="/fr-fr/Cart/RemoveItem/AR201901020017"> <span
+							class="icon icon-close"></span></a>
+						<c:url value="/presentation" context="/springmvc" var="urleffacer" />
+						<a type="button" class="btn btn-success" href="${urleffacer}">effacer</a>
+					</div>
+				<td>
 			</tr>
-		</table>
-	</div>
-</div>
+		</c:forEach>
+		<tr>
+	</table>
 
-<div class="container">
-	<div class="row">
-		<div class="col-md-1"></div>
-		<h1>+</h1>
-		<button type="button" class="btn btn-success">Ajouter produit</button>
-		<div class="col-md-10"></div>
-
-		<button type="button" class="btn btn-success">VALIDER</button>
-		<div class="col-md-1"></div>
-	</div>
-</div>
-
-<section class="version desktop">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-lg-2 d-none d-lg-block"></div>
-			<div class="col">
-				<a href="#" class="btn-circle btn-light">
-					<img src="resources/images/caddi.jpeg" width="50" height="50">
-				</a>
-			</div>
-			<div class="col">
-				<a href="#" class="btn-circle btn-light">
-					<img src="resources/images/cartebleu.png" width="50"
-					height="50">
-				</a>
-			</div>
-			<div class="col">
-				<a href="#" class="btn-circle btn-light">
-					<img src="resources/images/velo.jpeg" width="50"
-					height="50">
-				</a>
-			</div>
-			<div class="col">
-				<a href="#" class="btn-circle btn-light">
-					<img src="resources/images/euro.png" width="50"
-					height="50">
-				</a>
-			</div>
+	<div class="w3-row">
+		<div class="w3-container w3-twothird "></div>
+		<div class="w3-green w3-container w3-third">
+			<strong>Total / Presentation</strong>
+			<table class="w3-table">
+				<tr>
+					<th class="price"><fmt:formatNumber value="${result}"
+							pattern="##.##" />&euro;</th>
+				</tr>
+			</table>
 		</div>
 	</div>
-</section>
+
+	<div class="container">
+		<div class="row">
+				<button type="button" class="btn btn-success">Ajouter produit</button>
+			<div class="col-lg-8"></div>
+			<button type="button" class="btn btn-success">VALIDER</button>
+			<div class="col-lg-2 text-align: right"></div>
+		</div>
+	</div>
+
+	<section class="version desktop">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-2 d-none d-lg-block"></div>
+				<div class="col">
+					<a href="#" class="btn-circle btn-light"> <img
+						src="resources/images/caddi.jpeg" width="100" height="100">
+					</a>
+				</div>
+				<div class="col">
+					<a href="#" class="btn-circle btn-light"> <img
+						src="resources/images/cartebleu.png" width="100" height="100">
+					</a>
+				</div>
+				<div class="col">
+					<a href="#" class="btn-circle btn-light"> <img
+						src="resources/images/velo.jpeg" width="100" height="100">
+					</a>
+				</div>
+				<div class="col">
+					<a href="#" class="btn-circle btn-light"> <img
+						src="resources/images/euro.png" width="100" height="100">
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
 
 
 
-</div>
+	</div>
 </body>
 </html>
