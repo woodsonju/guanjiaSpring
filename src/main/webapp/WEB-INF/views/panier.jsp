@@ -26,9 +26,9 @@
 			<td>${ ligne.prestation.description }</td>
 			<td><strong>Prestation</strong></td>
 			<td><span class="price">${ ligne.prestation.prixPrestation }</span></td>
-			<td><button type="button" class="w3-circle w3-blue">-</td>
+			<td><button type="button" class="w3-circle w3-blue"quantiter: ${ moin }>-</td>
 			<td><span class="Quantité">${ ligne.quantite }</span>
-				<button type="button" class="w3-circle w3-green">+</button></td>
+				<button type="button" class="w3-circle w3-green"quantiter: ${ add }>+</button></td>
 			<td><span class="price">${ ligne.prixTotal }</span></td>
 			<td><div class="dsp-cell cell-remove">
 					<a data-ajax="true"
@@ -36,6 +36,8 @@
 						data-ajax-loading="#ajaxWait" data-ajax-method="POST"
 						href="/fr-fr/Cart/RemoveItem/AR201901020017"> <span
 						class="icon icon-close"></span></a>
+					<c:url value="/presentation" context="/springmvc" var="urleffacer" />
+					<a type="button" class="btn btn-success" href="${urleffacer}">effacer</a>
 				</div>
 			<td>
 		</tr>
@@ -46,8 +48,12 @@
 <div class="w3-row">
 	<div class="w3-container w3-twothird "></div>
 	<div class="w3-green w3-container w3-third">
-					<strong>Prestation</strong>
-					<!-- <span class="price"></span> -->
+		<strong>Total / Presentation</strong>
+		<table class="w3-table">
+			<tr>
+				<th>${result}</th>
+			</tr>
+		</table>
 	</div>
 </div>
 
@@ -60,10 +66,39 @@
 
 		<button type="button" class="btn btn-success">VALIDER</button>
 		<div class="col-md-1"></div>
-
 	</div>
 </div>
 
+<section class="version desktop">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-lg-2 d-none d-lg-block"></div>
+			<div class="col">
+				<a href="#" class="btn-circle btn-light">
+					<img src="resources/images/caddi.jpeg" width="50" height="50">
+				</a>
+			</div>
+			<div class="col">
+				<a href="#" class="btn-circle btn-light">
+					<img src="resources/images/cartebleu.png" width="50"
+					height="50">
+				</a>
+			</div>
+			<div class="col">
+				<a href="#" class="btn-circle btn-light">
+					<img src="resources/images/velo.jpeg" width="50"
+					height="50">
+				</a>
+			</div>
+			<div class="col">
+				<a href="#" class="btn-circle btn-light">
+					<img src="resources/images/euro.png" width="50"
+					height="50">
+				</a>
+			</div>
+		</div>
+	</div>
+</section>
 
 
 
