@@ -16,6 +16,9 @@ import fr.dawan.guanjia.entities.Utilisateur;
 @RequestMapping("/admin")
 public class AdminController {
 
+	//merci de supprimer cette phrase
+	
+	
 	@Autowired
 	UtilisateurDao utilisateurDao;
 
