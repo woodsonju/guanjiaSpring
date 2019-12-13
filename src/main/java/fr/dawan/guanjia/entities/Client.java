@@ -12,12 +12,14 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
 import javax.persistence.Transient;
+import javax.validation.constraints.NotEmpty;
 
 
 @Entity
 @DiscriminatorValue("CLIENT")
 public class Client extends Utilisateur {
 	
+//	@NotEmpty
 	private String numTelephone;
 	
 	@OneToMany(mappedBy = "client")

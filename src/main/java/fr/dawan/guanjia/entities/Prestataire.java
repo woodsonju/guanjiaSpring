@@ -10,11 +10,16 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @DiscriminatorValue("PRESTATAIRE")
 public class Prestataire extends Utilisateur {
+	
+	@NotEmpty
 	private String raisonSocial;
+	
+	@NotEmpty
 	private String numTelephone;
 	
 	

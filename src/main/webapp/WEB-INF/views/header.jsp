@@ -87,8 +87,7 @@
 				<div class="col-lg-8 col-xs-1"></div>
 				<div class="col">
 					<div>
-						<a></a>
-						<button type="button" class="btn btn-black">Incription</button>
+						<a href="utilisateur/inscription"><button type="button" class="btn btn-black">Incription</button></a>
 					</div>
 				</div>
 				<div class="col">

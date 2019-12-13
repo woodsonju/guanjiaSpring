@@ -9,6 +9,10 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+
+import org.hibernate.validator.constraints.Length;
 
 @Entity
 @Inheritance (strategy=InheritanceType.SINGLE_TABLE)
@@ -16,10 +20,21 @@ import javax.persistence.InheritanceType;
 public  class Utilisateur extends DbObject implements Serializable{
 
 	private static final long serialVersionUID = 1L;
+	
+	@NotEmpty
 	private String nom;
+	
+	@NotEmpty
 	private String prenom;
+	
+	@NotEmpty
+	@Pattern(regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
 	private String email;
+	
+	@NotEmpty
+	@Length(min = 6)
 	private String pwd;
+	
 	private boolean statut;
 	
 	@Enumerated(EnumType.STRING)
