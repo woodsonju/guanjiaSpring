@@ -142,7 +142,7 @@
 								<label class="col-md-4 col-form-label form-control-label">Numero</label>
 								<div class="col-md-6 col-9">
 									<input type="text" class="form-control" name="numero"
-										id="numero" placeholder="numero" value="654" required>
+										id="numero" placeholder="numero" value="654" required disabled>
 								</div>
 								<div class="col-md-2 col-2">
 									<button class="btn btn-dark">
