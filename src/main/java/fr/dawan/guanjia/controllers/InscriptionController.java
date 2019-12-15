@@ -1,6 +1,7 @@
 package fr.dawan.guanjia.controllers;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,13 +11,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-import fr.dawan.guanjia.dao.GenericDao;
+import fr.dawan.guanjia.dao.UtilisateurDao;
 import fr.dawan.guanjia.entities.Utilisateur;
 
 @Controller
-@RequestMapping("/utilisateur")
+@RequestMapping(
+		  value = "/utilisateur", 
+		  method = {RequestMethod.GET, RequestMethod.POST})
 public class InscriptionController {
+	
+	@Autowired
+	UtilisateurDao utilisateurDao;
 	
 	@GetMapping("/inscription")
 	public String consulterCompte(Model model) {
@@ -24,18 +31,24 @@ public class InscriptionController {
 		return "inscription";
 	}
 	
-	@PostMapping("/addUtilisateur")
+	@PostMapping("/addinscription")
 	public String addUtilisateur(Model model, HttpSession session,
-			@ModelAttribute("utilisateur-inscription") Utilisateur u,
+			@Valid @ModelAttribute("utilisateur-inscription") Utilisateur u,
 			BindingResult result
 			) {
+		System.out.println("rentre dans le post");
 		if (result.hasErrors()) {
 			model.addAttribute("errors", result.getAllErrors());
-			model.addAttribute("utilisateur-form", u);
+			model.addAttribute("utilisateur-inscription", u);
+			System.out.println("erroooooooooooooooooooooooor");
 			return "inscription";
 		} else {
-			Utilisateur dbClient = GenericDao.create(u);
-			System.out.println(dbClient.getEmail());
+			System.out.println("----------" + u.getTypeUtilisateur() + "----------");
+				
+				utilisateurDao.create(u);
+			}
+				
+			//System.out.println("dfsdfsdf : " + cl.getEmail());
 //			
 //			if (dbClient != null && dbClient.getPwd().contentEquals(u.getPwd())) {
 //				session.setAttribute("utilisateur_id", dbClient.getId());
@@ -62,6 +75,5 @@ public class InscriptionController {
 //				return "login";
 //			}
 		//}
-	}
 
 }

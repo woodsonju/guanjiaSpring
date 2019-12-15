@@ -9,8 +9,10 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Length;
 
@@ -21,19 +23,31 @@ public  class Utilisateur extends DbObject implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@NotEmpty
+	@NotEmpty 
+	@Size(min = 5, max = 20, message = "{utilisateur.nom.size")
 	private String nom;
 	
 	@NotEmpty
+	@Size(min = 5, max = 20, message = "{utilisateur.prenom.size")
 	private String prenom;
 	
 	@NotEmpty
+	private String numTelephone;
+	
+	@NotEmpty
 	@Pattern(regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
+	@Email(message = "{user.email.valid}")
 	private String email;
 	
 	@NotEmpty
-	@Length(min = 6)
+	//@Length(min = 6, max = 15)
+	@Size(min = 6, max = 15)
 	private String pwd;
+	
+	@NotEmpty
+	//@Length(min = 6)
+	@Size()
+	private String confirmpwd;
 	
 	private boolean statut;
 	
@@ -103,6 +117,22 @@ public  class Utilisateur extends DbObject implements Serializable{
 
 	public void setTypeUtilisateur(TypeUtilisateur typeUtilisateur) {
 		this.typeUtilisateur = typeUtilisateur;
+	}
+
+	public String getNumTelephone() {
+		return numTelephone;
+	}
+
+	public void setNumTelephone(String numTelephone) {
+		this.numTelephone = numTelephone;
+	}
+
+	public String getConfirmpwd() {
+		return confirmpwd;
+	}
+
+	public void setConfirmpwd(String confirmpwd) {
+		this.confirmpwd = confirmpwd;
 	}
 
 

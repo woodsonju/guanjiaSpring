@@ -1,5 +1,5 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
@@ -12,9 +12,7 @@
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
-<link rel="stylesheet" type="text/css" href="../../resources/css/header.css"/>
-</head>
+</head> -->
 <body>
 
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
@@ -107,6 +105,6 @@
 	</div>
 </nav>
 </body>
-</html>
+<!-- </html> -->
 
 

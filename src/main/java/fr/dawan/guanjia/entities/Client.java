@@ -19,9 +19,6 @@ import javax.validation.constraints.NotEmpty;
 @DiscriminatorValue("CLIENT")
 public class Client extends Utilisateur {
 	
-//	@NotEmpty
-	private String numTelephone;
-	
 	@OneToMany(mappedBy = "client")
 	private List<Panier> listPanier = new ArrayList<Panier>();
 	
@@ -37,12 +34,6 @@ public class Client extends Utilisateur {
 	@Transient
 	private Set<Adresse> adressesLivraison = new HashSet<Adresse>();
 	
-	public String getNumTelephone() {
-		return numTelephone;
-	}
-	public void setNumTelephone(String numTelephone) {
-		this.numTelephone = numTelephone;
-	}
 	public List<Panier> getListPanier() {
 		return new ArrayList<Panier>(listPanier);
 	}

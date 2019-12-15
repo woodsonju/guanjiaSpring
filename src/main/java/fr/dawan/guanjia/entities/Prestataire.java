@@ -16,11 +16,8 @@ import javax.validation.constraints.NotEmpty;
 @DiscriminatorValue("PRESTATAIRE")
 public class Prestataire extends Utilisateur {
 	
-	@NotEmpty
+//	@NotEmpty
 	private String raisonSocial;
-	
-	@NotEmpty
-	private String numTelephone;
 	
 	
 	@ManyToMany(mappedBy = "listPrestataire")
@@ -44,13 +41,6 @@ public class Prestataire extends Utilisateur {
 		this.raisonSocial = raisonSocial;
 	}
 
-	public String getNumTelephone() {
-		return numTelephone;
-	}
-
-	public void setNumTelephone(String numTelephone) {
-		this.numTelephone = numTelephone;
-	}
 
 	public List<Prestation> getListPrestation() {
 		return listPrestation;

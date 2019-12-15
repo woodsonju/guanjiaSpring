@@ -4,15 +4,49 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
 
 import org.springframework.transaction.annotation.Transactional;
 
+import fr.dawan.guanjia.entities.DbObject;
 import fr.dawan.guanjia.entities.Utilisateur;
 
-public class UtilisateurDao extends GenericDao {
+public class UtilisateurDao {
 	
 	@PersistenceContext
 	protected EntityManager em;
+	
+	@Transactional
+	public Utilisateur create(Utilisateur utilisateur) {
+		if(utilisateur != null && utilisateur.getId()==0) 
+			em.persist(utilisateur);
+		return utilisateur;
+	}
+	
+	@Transactional
+	public void update(Utilisateur utilisateur) {
+		if(utilisateur.getId() > 0) 
+			em.merge(utilisateur);
+	}
+	
+	@Transactional(readOnly = true)
+	public Utilisateur findById(long id) {
+		return em.find(Utilisateur.class, id);
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly = true)
+	public List<Utilisateur> findAll(Utilisateur utilisateur) {
+		Query tq = em.createQuery("SELECT u FROM Utilisateur u");
+		return tq.getResultList();
+	}
+	
+	@Transactional
+	public void delete(Utilisateur utilisateur) {
+		em.remove(utilisateur);
+	}
+
 	
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true)
@@ -25,6 +59,7 @@ public class UtilisateurDao extends GenericDao {
 			u = utilisateurs.get(0);	
 		return u;
 	}
+	
 
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true)
@@ -35,7 +70,7 @@ public class UtilisateurDao extends GenericDao {
 				               .getResultList();
 		return ls;
 	}
-
+	
 	
 	public Long count() {
 		Long nb = (Long) em.createQuery("SELECT COUNT(u.id) FROM Utilisateur u").getSingleResult();
