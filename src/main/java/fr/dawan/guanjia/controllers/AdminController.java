@@ -24,10 +24,13 @@ public class AdminController {
 	public String showAllUsers(Model m, @PathVariable(name="page") int page, @PathVariable(name="max") int max ) {
 		int start = (page-1)*max;
 		List<Utilisateur> ls = utilisateurDao.findAllPagination(start, max);
+		int nbpage = (int) (utilisateurDao.count()/max+1);
+		System.out.println("il y aura pages : " + nbpage);
 		
 		m.addAttribute("usersList", ls);
 		m.addAttribute("page", page);
 		m.addAttribute("max", max);
+		m.addAttribute("nbpage", nbpage);
 		
 		boolean suivExist = (page*max)<utilisateurDao.count();
 		m.addAttribute("suivExist", suivExist);
