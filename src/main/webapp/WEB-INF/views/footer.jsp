@@ -71,7 +71,7 @@
 
 		</div>
 
-		<div class="footer-copyright text-center py-3">© 2019 Copyright : GUANJIA</div>
+		<div class="footer-copyright text-center ">© 2019 Copyright : GUANJIA</div>
 
 	</footer>
 

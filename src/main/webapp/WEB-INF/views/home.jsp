@@ -25,8 +25,11 @@
 	
 	<section id="section1">
 			<br>
+			<br> 
+			<br>
+			<br>
+			<br>
 			
-			<br> <br>
 			<div class="titre">
 				<h1 align="center">Bienvenue chez Guanjia</h1>
 			</div>

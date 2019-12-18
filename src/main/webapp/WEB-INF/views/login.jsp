@@ -1,114 +1,116 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<%@ page session="true" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
+<%@ page session="true"%>
 
 <!DOCTYPE html>
 
-<head> 
-    <title>Login/Register Form</title>
-    <base href="<%=request.getScheme()+"://"+request.getServerName()
-        +":"+request.getServerPort() + request.getContextPath() + "/"%>" />
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Login/Register Form</title>
+<base
+	href="<%=request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+					+ request.getContextPath() + "/"%>" />
+<link rel="stylesheet" type="text/css" href="resources/css/login.css" />
 </head>
+
+
 <body>
+	
+	<section id="section2">
 
-<h3>Authentification Client</h3>
-    
-    <form:form method="post" action="checkLogin" modelAttribute="utilisateur-form">
+		<br> <br> <br> <br>
 
-            <br>
-        <form:label path="email">Email : </form:label>
-        <form:input path="email" />
-        <br />
-        <form:label path="pwd">Mot de passe : </form:label>
-        <form:input path="pwd" />
-        <br />
-        <input type="submit" value="Se connecter" />
-    </form:form>
+		<div class="titre mt-4">
+			<h1 align="center">Connectez vous à Guanjia</h1>
+		</div>
 
-    <%-- <div id="logreg-forms">
-    
-        <!-- formulaire pour login -->
-        <form:form class="form-signin" method="post" action="checkLogin" modelAttribute="client-form">
-        
-            <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
-            
-            <!-- TODO: se connecter via Facebook ou Google+ -->
-            <div class="social-login">
-                <form:button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </form:button>
-                <form:button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </form:button>
-            </div>
-            
-            <p style="text-align:center"> OR  </p>
-          
-          
-            <!-- TODO: faut "form:" ou pas? -->
-            <select name="statut" id="statut-select" class="form-control">
-            <option value="" disabled selected style="display:none">Merci de choisir votre statut</option>
-            <option value="client">client</option>
-            <option value="commercant">commercant</option>
-            <option value="admin">admin</option>
-            <option value="livreur">livreur</option>
-            </select> 
-            
-            
-            
-            <!-- TODO:path="email/pwd" doit correspondre le nom exact des attributs dans la classe "Client" (chercher solution pour Utilisateur) -->
-            <form:input path="email" type="email" id="inputEmail" class="form-control" placeholder="Email address" required="true" autofocus=""/>
-            <form:input path="pwd" type="password" id="inputPassword" class="form-control" placeholder="Password" required="true"/>
-          
-            <form:button class="btn btn-success btn-block" type="submit"><i class="fas fa-sign-in-alt"></i> Sign in</form:button>
-      
-            
-            <!-- TODO: forget password à faire -->
-            <a href="#" id="forgot_pswd">Forgot password?</a>
-            <hr>
-            
-            <!-- <p>Don't have an account!</p>  -->
-            <!-- TODO: page inscription à faire -->
-            <form:button class="btn btn-primary btn-block" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Sign up New Account</form:button>
-        </form:form>
+		<br> <br>
+
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col col-md-3"></div>
+				<div class="col col-md-2 align-middle justify-content-center row align-items-center">
+					<button class="btn btn-primary" type="button"><span><i class="fab fa-facebook-f"></i> Via Facebook</span></button>
+				</div>
+				<div class="col col-md-2"></div>
+				<div class="col col-md-2 align-middle justify-content-center row align-items-center"><button class="btn btn-danger" type="button"><span><i class="fab fa-google-plus-g"></i> Via Google +</span>
+					</button>
+				</div>
+				<div class="col col-md-3"></div>
+			</div>
+		</div>
+
+ <br> <br>
+ 	<p style="text-align:center"> OU  </p>
+ <br> <br>
+ 
+		<form:form method="post" action="checkLogin"
+			modelAttribute="utilisateur-form">
+
+			<div class="form-group row">
+				<div class="col col-md-4"></div>
+				<div class ="col col-md-2 align-middle justify-content-center row align-items-center">
+					<form:label path="email" class="col-sm-2 col-form-label"
+						style="width: 100px;">Email</form:label>
+				</div>
+				<div class ="col col-md-2 align-middle justify-content-center row align-items-center">
+					<form:input path="email" class="form-control" placeholder="a@a.com" />
+				</div>
+				<div class="col col-md-4"></div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col col-md-4"></div>
+				<div class ="col col-md-2 align-middle justify-content-center row align-items-center">
+					<form:label path="pwd" class="form-label"
+						style="width: 100px;">Password</form:label>
+				</div>
+				<div class ="col col-md-2 align-middle justify-content-center row align-items-center">
+					<form:input path="pwd" class="form-control" id="inputPassword"
+						placeholder="8 caractères min" />
+				</div>
+				<div class="col col-md-4"></div>
+			</div>
+
+			<div class="form-group row">
+				<div class="col col-md-6"></div>
+				<div>
+					<div>
+						<a href="#" id="forgot_pswd">Mot de passe oublié</a>
+					</div>
+				</div>
+				<div class="col col-md-5"></div>
+			</div>
 
 
-        <!-- TODO: tout le rest de cette page -->
-        <form action="/reset/password/" class="form-reset">
-                <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" autofocus="">
-                <button class="btn btn-primary btn-block" type="submit">Reset Password</button>
-                <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
-            </form>
-            
-            <form action="/signup/" class="form-signup">
-                <div class="social-login">
-                    <button class="btn facebook-btn social-btn" type="button"><span><i class="fab fa-facebook-f"></i> Sign up with Facebook</span> </button>
-                </div>
-                <div class="social-login">
-                    <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign up with Google+</span> </button>
-                </div>
-                
-                <p style="text-align:center">OR</p>
 
-                <!-- TODO: faut "form:" ou pas? -->
-            <select name="statut" id="statut-select" class="form-control">
-            <option value="" disabled selected style="display:none">Merci de choisir votre statut</option>
-            <option value="client">client</option>
-            <option value="commercant">commercant</option>
-            <option value="admin">admin</option>
-            <option value="livreur">livreur</option>
-            </select> 
-            
-                <input type="text" id="user-name" class="form-control" placeholder="Full name" required="" autofocus="">
-                <input type="email" id="user-email" class="form-control" placeholder="Email address" required autofocus="">
-                <input type="password" id="user-pass" class="form-control" placeholder="Password" required autofocus="">
-                <input type="password" id="user-repeatpass" class="form-control" placeholder="Repeat Password" required autofocus="">
+			<div class="form-group row">
+				<div class="col-5"></div>
+				<div class="col-2">
+					<input type="submit" value="Se connecter" class="btn btn-dark" />
+				</div>
+				<div class="align-middle">
+					<p style="text-align:center" class="text-danger">${msg}</p>
+				</div>
+				<div class="col-4"></div>
+			</div>
+		</form:form>
 
-                <button class="btn btn-primary btn-block" type="submit"><i class="fas fa-user-plus"></i> Sign Up</button>
-                <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Back</a>
-            </form>   
-            <br>
-            
-    </div>
-     --%>
-    <p>${msg}</p>
-    
+		
+
+		<br> <br> 
+
+
+
+
+
+	</section>
+
 </body>
 </html>
+
+
+
