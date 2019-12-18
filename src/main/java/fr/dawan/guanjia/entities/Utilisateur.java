@@ -39,18 +39,22 @@ public  class Utilisateur extends DbObject implements Serializable{
 		super();
 	}
 
-	public Utilisateur(String nom, String prenom, String email, String pwd, boolean statut,
-			TypeUtilisateur typeUtilisateur) {
+
+	public Utilisateur(String nom, String prenom, String numTelephone, String email, String pwd, String confirmpwd,
+			boolean statut, TypeUtilisateur typeUtilisateur) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
+		this.numTelephone = numTelephone;
 		this.email = email;
 		this.pwd = pwd;
+		this.confirmpwd = confirmpwd;
 		this.statut = statut;
 		this.typeUtilisateur = typeUtilisateur;
 	}
-
 	
+	
+
 	public String getNom() {
 		return nom;
 	}

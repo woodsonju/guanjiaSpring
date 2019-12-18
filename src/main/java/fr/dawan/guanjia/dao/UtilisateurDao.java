@@ -80,23 +80,7 @@ public class UtilisateurDao {
 			return true;
 		return false;
 	}
-	
-	/*
-	 * public boolean userExists(String username) {
-  String sql = "select * from users where username = :username";
-  
-  List list = namedParameterJdbcTemplate
-.query(sql, getSqlParameterSource(username, null), new UserMapper());
-  
-  if(list.size() > 0){
-   return true;
-  }
-  
-  return false;
- }
-	 */
-	
-	
+
 	public Long count() {
 		Long nb = (Long) em.createQuery("SELECT COUNT(u.id) FROM Utilisateur u").getSingleResult();
 		return nb;

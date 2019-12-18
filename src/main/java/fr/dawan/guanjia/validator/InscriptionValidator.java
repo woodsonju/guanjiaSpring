@@ -15,7 +15,9 @@ import fr.dawan.guanjia.entities.Utilisateur;
 public class InscriptionValidator implements Validator{
 
 	private static final Pattern EMAIL_REGEX = Pattern.compile("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
-
+	private static final Pattern PHONE_REGEX = Pattern.compile("^(?:(?:\\+|00)33[\\s.-]{0,3}(?:\\(0\\)[\\s.-]{0,3})?|0)[1-9](?:(?:[\\s.-]?\\d{2}){4}|\\d{2}(?:[\\s.-]?\\d{3}){2})$");
+	
+	
 	@Autowired
 	UtilisateurDao utilisateurDao;
 	
@@ -46,8 +48,12 @@ public class InscriptionValidator implements Validator{
 			errors.rejectValue("prenom", "utilisateur.prenom.size");
 		}
 
-		if (user.getNumTelephone() != null && user.getNumTelephone().length() < 8) {
+		if (user.getNumTelephone() != null && user.getNumTelephone().length() < 10) {
 			errors.rejectValue("numTelephone", "utilisateur.numTelephone.size");
+		}
+		
+		if (user.getNumTelephone()  != null && !PHONE_REGEX.matcher(user.getNumTelephone()).matches()) {
+			errors.rejectValue("numTelephone", "utilisateur.numTelephone.invalid");
 		}
 
 		if (user.getPwd() != null && user.getConfirmpwd() != null &&
@@ -58,11 +64,10 @@ public class InscriptionValidator implements Validator{
 		}
 
 		if (user.getPwd() != null && user.getConfirmpwd() != null && 
-				user.getPwd().length() < 5 && user.getPwd().length() > 15 &&
-				user.getConfirmpwd().length() < 5 && user.getConfirmpwd().length() > 15) {
+				(user.getPwd().length() < 5) && (user.getPwd().length() > 15) &&
+				(user.getConfirmpwd().length() < 5) && (user.getConfirmpwd().length() > 15)) {
 			errors.rejectValue("pwd", "utilisateur.pwd.size");
 			errors.rejectValue("confirmpwd", "utilisateur.pwd.size");
-
 		}
 		
 
@@ -80,10 +85,7 @@ public class InscriptionValidator implements Validator{
 			System.out.println("defdefdfdf : ");
 			errors.rejectValue("email", "utilisateur.email.exists");
 		}
-		
-//		 if(userService.userExists(user.getUsername())){
-//			   errors.rejectValue("username", "exists.username");
-//			  }
+
 
 	}
 
