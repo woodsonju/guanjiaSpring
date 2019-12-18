@@ -64,8 +64,8 @@ public class InscriptionValidator implements Validator{
 		}
 
 		if (user.getPwd() != null && user.getConfirmpwd() != null && 
-				(user.getPwd().length() < 5) && (user.getPwd().length() > 15) &&
-				(user.getConfirmpwd().length() < 5) && (user.getConfirmpwd().length() > 15)) {
+				((user.getPwd().length() < 5) ||(user.getPwd().length() > 15)) &&
+				((user.getConfirmpwd().length() < 5) || (user.getConfirmpwd().length() > 15))) {
 			errors.rejectValue("pwd", "utilisateur.pwd.size");
 			errors.rejectValue("confirmpwd", "utilisateur.pwd.size");
 		}
