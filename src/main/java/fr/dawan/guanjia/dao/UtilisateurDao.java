@@ -5,12 +5,11 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.dawan.guanjia.entities.DbObject;
 import fr.dawan.guanjia.entities.Utilisateur;
+
 
 public class UtilisateurDao {
 	
@@ -70,6 +69,32 @@ public class UtilisateurDao {
 				               .getResultList();
 		return ls;
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly = true)
+	public boolean EmailExists(String email) {
+		List<Utilisateur> ls = em.createQuery("Select u FROM Utilisateur u WHERE u.email= :email")
+				.setParameter("email", email)
+				.getResultList();
+		if(ls.size() > 0) //email existe déjà dans la base de données
+			return true;
+		return false;
+	}
+	
+	/*
+	 * public boolean userExists(String username) {
+  String sql = "select * from users where username = :username";
+  
+  List list = namedParameterJdbcTemplate
+.query(sql, getSqlParameterSource(username, null), new UserMapper());
+  
+  if(list.size() > 0){
+   return true;
+  }
+  
+  return false;
+ }
+	 */
 	
 	
 	public Long count() {

@@ -36,32 +36,32 @@ Bootstrap CSS
 									<div class="form-group">
 										<form:label path="nom" for="inputNom">Nom</form:label> 
 										<form:input path="nom" type="text" class="form-control" id="inputNom" placeholder="Nom"/>
-										<form:errors path="nom" cssClass="error" />
+										<form:errors path="nom" cssClass="error" cssStyle="color:#F52508"/>
 									</div>
 									<div class="form-group">
 										<form:label path="prenom" for="inputPrenom">Prenom</form:label> 
 										<form:input path="prenom" type="text" class="form-control" id="inputPrenom" placeholder="Prenom"/>
-										<form:errors path="prenom" cssClass="error" />
+										<form:errors path="prenom" cssClass="error" cssStyle="color:#F52508"/>
 									</div>
 									<div class="form-group">
 										<form:label path="email" for="inputEmail3">Email</form:label> 
 										<form:input path="email" type="email" class="form-control" id="inputEmail3" placeholder="email@gmail.com" required=""/>
-										<form:errors path="email" cssClass="error" />
+										<form:errors path="email" cssClass="error" cssStyle="color:#F52508"/>
 									</div>
 									<div class="form-group">
 										<form:label path="numTelephone" for="inputNumTel">Numéro de telephone</form:label> 
 										<form:input path="numTelephone" type="numTelephone" class="form-control" id="inputNumTel" placeholder="0500000000" required=""/>
-										<form:errors path="numTelephone" cssClass="error" />
+										<form:errors path="numTelephone" cssClass="error" cssStyle="color:#F52508"/>
 									</div> 
 									<div class="form-group">
 										<form:label path="pwd" for="inputPassword1">Password</form:label> 
 										<form:input path="pwd" type="password" class="form-control" id="inputPassword1" placeholder="password" title="At least 6 characters with letters and numbers" required=""/>
-										<form:errors path="pwd" cssClass="error" />
+										<form:errors path="pwd" cssClass="error" cssStyle="color:#F52508"/>
 									</div>
 									<div class="form-group">
 										<form:label path="confirmpwd" for="inputPassword2">Confirm Password</form:label> 
 										<form:input path="confirmpwd" type="password" class="form-control" id="inputPassword2" placeholder="password (again)" required="" />
-										<form:errors path="confirmpwd" cssClass="error" />
+										<form:errors path="confirmpwd" cssClass="error"  cssStyle="color:#F52508"/>
 									</div>
 									<div class="form-group">
 										<form:select path="typeUtilisateur" id="typeutilisateur">

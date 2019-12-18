@@ -2,18 +2,23 @@ package fr.dawan.guanjia.validator;
 
 import java.util.regex.Pattern;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
+import fr.dawan.guanjia.dao.UtilisateurDao;
 import fr.dawan.guanjia.entities.Utilisateur;
 
+@Component
 public class InscriptionValidator implements Validator{
 
 	private static final Pattern EMAIL_REGEX = Pattern.compile("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
-	private static final Pattern SPACE_PWD_REGEX = Pattern.compile("\\S+");
 
-
+	@Autowired
+	UtilisateurDao utilisateurDao;
+	
 	@Override
 	public boolean supports(Class<?> clazz) {
 		return Utilisateur.class.isAssignableFrom(clazz);
@@ -70,6 +75,15 @@ public class InscriptionValidator implements Validator{
 		if (user.getEmail() != null && !EMAIL_REGEX.matcher(user.getEmail()).matches()) {
 			errors.rejectValue("email", "utilisateur.email.invalid");
 		}
+		
+		if(utilisateurDao.EmailExists(user.getEmail())) {
+			System.out.println("defdefdfdf : ");
+			errors.rejectValue("email", "utilisateur.email.exists");
+		}
+		
+//		 if(userService.userExists(user.getUsername())){
+//			   errors.rejectValue("username", "exists.username");
+//			  }
 
 	}
 
