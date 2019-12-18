@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import fr.dawan.guanjia.dao.UtilisateurDao;
 import fr.dawan.guanjia.entities.Utilisateur;
+import fr.dawan.guanjia.validator.InscriptionValidator;
 
 @Controller
 @RequestMapping(
@@ -25,6 +27,9 @@ public class InscriptionController {
 	@Autowired
 	UtilisateurDao utilisateurDao;
 	
+	@Autowired
+	InscriptionValidator inscriptionValidator;
+	
 	@GetMapping("/inscription")
 	public String consulterCompte(Model model) {
 		model.addAttribute("utilisateur-inscription", new Utilisateur());
@@ -34,8 +39,9 @@ public class InscriptionController {
 	@PostMapping("/addinscription")
 	public String addUtilisateur(Model model, HttpSession session,
 			@Valid @ModelAttribute("utilisateur-inscription") Utilisateur u,
-			BindingResult result
+			BindingResult result, RedirectAttributes redirectAttributes
 			) {
+		inscriptionValidator.validate(u, result);
 		System.out.println("rentre dans le post");
 		if (result.hasErrors()) {
 			model.addAttribute("errors", result.getAllErrors());
@@ -46,6 +52,9 @@ public class InscriptionController {
 			System.out.println("----------" + u.getTypeUtilisateur() + "----------");
 				
 				utilisateurDao.create(u);
+				redirectAttributes.addFlashAttribute("msg", "Ton compte a été crée avec succès");
+				return "home";
+
 			}
 				
 			//System.out.println("dfsdfsdf : " + cl.getEmail());
@@ -66,7 +75,6 @@ public class InscriptionController {
 //					break;
 //				}
 				//return result1;
-				return "home";
 
 			} 
 		//else {

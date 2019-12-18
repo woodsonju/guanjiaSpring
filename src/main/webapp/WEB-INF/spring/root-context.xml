@@ -47,4 +47,5 @@
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean id="utilisateurDao" class="fr.dawan.guanjia.dao.UtilisateurDao"/>
+	<bean id="inscriptionValidator" class="fr.dawan.guanjia.validator.InscriptionValidator"/>
 </beans>

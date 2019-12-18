@@ -23,30 +23,16 @@ public  class Utilisateur extends DbObject implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	@NotEmpty 
-	@Size(min = 5, max = 20, message = "{utilisateur.nom.size")
 	private String nom;
 	
-	@NotEmpty
-	@Size(min = 5, max = 20, message = "{utilisateur.prenom.size")
 	private String prenom;
 	
-	@NotEmpty
 	private String numTelephone;
 	
-	@NotEmpty
-	@Pattern(regexp = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$")
-	@Email(message = "{user.email.valid}")
 	private String email;
 	
-	@NotEmpty
-	//@Length(min = 6, max = 15)
-	@Size(min = 6, max = 15)
 	private String pwd;
 	
-	@NotEmpty
-	//@Length(min = 6)
-	@Size()
 	private String confirmpwd;
 	
 	private boolean statut;
