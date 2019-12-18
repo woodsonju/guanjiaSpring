@@ -71,6 +71,11 @@ public class LoginController {
 		return "home";
 	}
 	
+	@GetMapping(value="/pwdreset")
+	public String getPwdReset(HttpSession session, Model model) {
+		return "password_reset";
+	}
+	
 	@ModelAttribute("isConnected")
 	public Boolean initSessionIsConnected() {
 		return false;

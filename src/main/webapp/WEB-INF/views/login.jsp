@@ -25,6 +25,9 @@
         <br />
         <input type="submit" value="Se connecter" />
     </form:form>
+    
+    <a href="pwdreset">Forgot Password </a>
+  
 
     <%-- <div id="logreg-forms">
     
