@@ -1,3 +1,4 @@
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
@@ -32,6 +33,7 @@
 			<br>
 			<br>
 			
+
 			<div class="titre">
 				<h1 align="center">Bienvenue chez Guanjia</h1>
 			</div>
@@ -165,16 +167,18 @@
 						</div>
 						<div class="col-5 d-none d-lg-block"></div>
 
+					</div>
 				</div>
 <br> <br> <br>
 			</section>
-		
 	</section>
 	<br>
-
+	<br>
+	<br>
 </body>
-
 </html>
+
+
 
 
 

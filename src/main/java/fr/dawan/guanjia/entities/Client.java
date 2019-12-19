@@ -88,3 +88,4 @@ public class Client extends Utilisateur {
 			this.adresses.add(adresse);
 	}
 }
+

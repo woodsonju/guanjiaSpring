@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,23 +63,37 @@
 					class="nav-item active align-middle justify-content-center row align-items-center"
 					style="height: 60px"><a class="nav-link" href="/espace-client"><img
 						src="resources/images/compte.png" alt="Logo" style="width: 40px;"></a>
-					<a class="nav-link">Compte</a></li>
+					<a class="nav-link">Compte</a>
+				</li>
+				
+	
 				<li
 					class="nav-item align-middle justify-content-center row align-items-center"
-					style="height: 60px"><a href="inscription"><button
-							type="button" class="btn btn-black ">Inscription</button></a></li>
+					style="height: 60px"><a href="inscription">
+					<button type="button" class="btn btn-black ">Inscription</button></a>
+				</li>
 				<li
 					class="nav-item align-middle justify-content-center row align-items-center mh-100"
-					style="height: 60px"><a href="login"><button type="button"
-							class="btn btn-black">Connexion</button></a></li>
-			</ul>
+					style="height: 60px">
+					<!--  <a href="login"></a>-->
+						<c:choose>
+							<c:when test="${sessionScope.isConnected}"> 	
+								<a href="logout"><button type="button" class="btn btn-black">Deconnexion</button></a>
+								
+							</c:when>
+							<c:otherwise>
+								<a href="login"><button type="button" class="btn btn-black">Connexion</button></a>
+							</c:otherwise>
+						</c:choose>		
+				</li>
 
-
-		</div>
-	</nav>
-
-
+		</ul>
+				
+			
+				
+	</div>
+</nav>
 </body>
-
 </html>
+
 
