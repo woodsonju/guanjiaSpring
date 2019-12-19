@@ -17,15 +17,18 @@
 	   color: grey;
 	   font-size: 30px;
 	   padding-top: 50px;
+	   margin-top: 100px;
 	   } 
 	   
 	   .myTable{
 	   padding-top: 50px;
 	   padding-bottom: 50px;
+	   
 	   }
 	   
 	   .myDiv{
 	   padding-bottom: 50px;
+	   
 	   }
 	   
 	</style>
@@ -40,6 +43,7 @@
 
 <div class="container table-responsive text-center myTable">
 <table  class="table table-hover table-condensed">
+
 		<thead>
 			<tr>
 			    <th>Type Utilisateur</th>

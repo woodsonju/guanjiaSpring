@@ -14,8 +14,7 @@ import javax.persistence.InheritanceType;
 @Inheritance (strategy=InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="utilisateur_discriminator", discriminatorType = DiscriminatorType.STRING)
 public  class Utilisateur extends DbObject implements Serializable{
-
-	private static final long serialVersionUID = 1L;
+	
 	private String nom;
 	private String prenom;
 	private String email;

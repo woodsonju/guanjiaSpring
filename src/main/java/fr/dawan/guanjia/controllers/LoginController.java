@@ -1,4 +1,5 @@
 package fr.dawan.guanjia.controllers;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,14 +14,13 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import fr.dawan.guanjia.dao.UtilisateurDao;
 import fr.dawan.guanjia.entities.Utilisateur;
 
-
 @Controller
 @SessionAttributes("isConnected")
 public class LoginController {
 
 	@Autowired
 	UtilisateurDao utilisateurDao;
-		
+
 	// @RequestMapping(value = "/login", method = RequestMethod.GET)
 	@GetMapping(value = "/login")
 	public String showLogin(Model m) {
@@ -28,8 +28,7 @@ public class LoginController {
 		// Aller sur login.jsp avec "user-form"
 		return "login";
 	}
-	
-	// @RequestMapping(value = "/checkLogin", method = RequestMethod.POST)
+
 	@PostMapping(value = "/checkLogin")
 	public String verifLogin(Model model, HttpSession session, @ModelAttribute("utilisateur-form") Utilisateur u,
 			BindingResult result) {
@@ -64,15 +63,22 @@ public class LoginController {
 		}
 	}
 	
+	
 	@GetMapping(value="/logout")
 	public String logout(HttpSession session, Model model) {
 		session.invalidate();
 		model.addAttribute("isConnected", false);
 		return "home";
-	}
+	}	
+	
+	@GetMapping(value="/pwdreset")
+	public String getPwdReset(HttpSession session, Model model) {
+		return "password_reset";
+	}	
 	
 	@ModelAttribute("isConnected")
 	public Boolean initSessionIsConnected() {
 		return false;
 	}
+
 }
