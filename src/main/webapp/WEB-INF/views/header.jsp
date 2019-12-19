@@ -28,7 +28,7 @@
 
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 
-			<ul class="navbar-nav mr-auto mt-8 mt-lg-0 nav-fill w-100 ">
+			<ul class="navbar-nav mr-auto mt-8 mt-lg-0 nav-fill w-100">
 
 				<li
 					class="nav-item active align-middle justify-content-center row align-items-center"

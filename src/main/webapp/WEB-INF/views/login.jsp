@@ -57,7 +57,7 @@
 						style="width: 100px;">Email</form:label>
 				</div>
 				<div class ="col col-md-2 align-middle justify-content-center row align-items-center">
-					<form:input path="email" class="form-control" placeholder="a@a.com" />
+					<form:input path="email" class="form-control" placeholder="a@a.com" style="width: 200px;"/>
 				</div>
 				<div class="col col-md-4"></div>
 			</div>
@@ -70,7 +70,7 @@
 				</div>
 				<div class ="col col-md-2 align-middle justify-content-center row align-items-center">
 					<form:input path="pwd" class="form-control" id="inputPassword"
-						placeholder="8 caractères min" />
+						placeholder="8 caractères min" style="width: 200px;" />
 				</div>
 				<div class="col col-md-4"></div>
 			</div>
