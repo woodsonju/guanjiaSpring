@@ -24,10 +24,12 @@ public class AdminController {
 	public String showAllUsers(Model m, @PathVariable(name="page") int page, @PathVariable(name="max") int max ) {
 		int start = (page-1)*max;
 		List<Utilisateur> ls = utilisateurDao.findAllPagination(start, max);
+		int nbpage = (int) (utilisateurDao.count()/max+1);
 		
 		m.addAttribute("usersList", ls);
 		m.addAttribute("page", page);
 		m.addAttribute("max", max);
+		m.addAttribute("nbpage", nbpage);
 		
 		boolean suivExist = (page*max)<utilisateurDao.count();
 		m.addAttribute("suivExist", suivExist);
@@ -45,7 +47,7 @@ public class AdminController {
         	m.addAttribute("msg","Utilisateur n°" + id + " a été supprimé");
         }
         //TODO: comment récupérer "max" (nombre de lignes à afficher par page)
-		return showAllUsers(m, 1, 3);
+		return showAllUsers(m, 1, 10);
 	}
 	
 	
