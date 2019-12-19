@@ -1,25 +1,24 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 
-<link
-	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<script
-	src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
-<script
-	src="//GuanjiaSpring/src/main/webapp/resources/js/quantiterpanier.js"></script>
-
 <html>
 <head>
 <title>W3.CSS</title>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script
+	src="${pageContext.request.contextPath}/resources/js/quantiterpanier.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-</head>
+<!-- <script src="/guanjia/resources/js/increment.js"></script>
+ --></head>
 <body>
 
 	<div class="col-md-12">
@@ -27,16 +26,18 @@
 	</div>
 	<table class="w3-table">
 		<tr>
+			<th></th>
 			<th>ID Produit</th>
 			<th>Prestation</th>
 			<th>Prix/unit&eacute; &euro;</th>
 			<th>Quantit&eacute;</th>
 			<th>Total ligne &euro;</th>
+			<th></th>
 		</tr>
 
-		<c:forEach items="${ mesLignes }" var="ligne">
+		<c:forEach items="${ mesLignes }" var="ligne" varStatus="i" >
 			<tr>
-
+				<td></td>
 				<td>${ ligne.prestation.description }</td>
 				<td><strong>Prestation</strong></td>
 				<td class="price"><strong> <fmt:formatNumber
@@ -45,30 +46,29 @@
 				<td>
 					<table>
 						<tr>
-							<td>
-								<div class="input-group">
-									<span class="input-group-btn">
-										<button type="button"
-											class="quantity-left-minus btn btn-danger btn-number"
-											data-type="minus" data-field="">
-											<span class="glyphicon glyphicon-minus">-</span>
+							<td><div class="quantite input-group sm-2">
+									<span class="input-group-btn"></span>
+										<button onclick="decrement(${i.index})" type="button" class="btn btn-info btn-number"
+											data-type="minus" data-field="quant[1]">
+											<span class="number glyphicon glyphicon-minus"></span>
 										</button>
-										<div class="col-sm-1" />
-									</span> <input type="text" id="quantity" name="quantity"
-										class="form-control input-number" value="${ligne.quantite}"
-										min="1" max="100"> <span class="input-group-btn">
-										<button type="button"
-											class="quantity-right-plus btn btn-success btn-number"
-											data-type="plus" data-field="">
-											<span class="glyphicon glyphicon-plus">+</span>
+									 <input type="text" id="i${i.index}" name="quant[i]"
+										class="form-control input-number" value="1">
+									<span class="input-group-btn"></span>
+										<button onclick="increment(${i.index})" type="button" class="btn btn-success btn-number"
+											data-type="plus" data-field="quant[1]">
+											<span class="number glyphicon glyphicon-plus"></span>
 										</button>
-									</span>
-								</div>
-							</td>
+									
+								</div></td>
+								
+								<td class="price"><strong> <fmt:formatNumber type = "number"
+							value="${result}" pattern="##.##" /><fmt:setLocale value = "en_EURO"/>
+				</strong></td>
 						</tr>
 					</table>
-				<td class="price"><strong><fmt:formatNumber
-							value="${ ligne.prixTotal }" pattern="#####.##" /></strong></td>
+
+				</td>
 				<td class="dsp-cell cell-remove"><a data-ajax="true"> <span
 						class="icon icon-close"></span></a> <c:url value="/presentation"
 						context="/springmvc" var="urleffacer" /> <a type="button"
@@ -86,35 +86,20 @@
 				<tr>
 					<td class="price"><fmt:formatNumber value="${result}"
 							pattern="##.##" />&euro;</td>
+					<td></td>
 				</tr>
+
 			</table>
-			<table>
+			<table class="w3-table">
 				<tr>
 					<td>
+						<p></p>
 						<button type="button" class="col-ms-4 btn btn-success">VALIDER</button>
 					</td>
 				</tr>
 			</table>
 		</div>
 	</div>
-
-	<!-- 	<div class="container"> -->
-
-	<!-- 		<div class="row"> -->
-	<!-- 			<div class="col-sm-8"></div> -->
-	<!-- 			<button type="button" class="btn btn-success">Ajouter -->
-	<!-- 				produit</button> -->
-
-	<!-- 			<table class="w3-container w3-third"> -->
-	<!-- 				<tr> -->
-	<!-- 					<td><div class="col-sm-3"></div></td> -->
-
-	<!-- 					<td><button type="button" class="btn btn-success">VALIDER</button></td> -->
-	<!-- 					<td><div class="col-sm-3"></div></td> -->
-	<!-- 				</tr> -->
-	<!-- 			</table> -->
-	<!-- 		</div> -->
-	<!-- 	</div> -->
 
 	<div class="container">
 		<div class="col-lg-12 "></div>
@@ -129,6 +114,9 @@
 			</table>
 		</div>
 	</div>
+
+
+
 
 
 	<section class="version desktop">
@@ -158,5 +146,7 @@
 			</div>
 		</div>
 	</section>
+
+
 </body>
 </html>

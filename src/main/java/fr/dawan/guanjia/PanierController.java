@@ -13,13 +13,22 @@ import fr.dawan.guanjia.entities.Panier;
 import fr.dawan.guanjia.entities.Prestataire;
 import fr.dawan.guanjia.entities.Prestation;
 
+//import src.main.webapp.resources.js.quantiterpanier;
+
 @Controller
 @RequestMapping("/panier")
 public class PanierController {
 
+	//private static final Object Quantit = null;
+
 	@GetMapping("")
 	public String pagePanier(Model m){
 		List<LigneDeCommande> lignes = new ArrayList<LigneDeCommande>();
+		
+		//private final int Quantit = new Quantit();
+		double result = 0.0;
+		int Quantit = 0;
+		int index = 0;
 		
 		Prestation p1 = new Prestation();
 		p1.setDescription("Samsung 21.5\" LED - S22F350FH");
@@ -45,28 +54,25 @@ public class PanierController {
 		l1.setQuantite(2);
 		l1.setPrestation(p1);
 		l1.setPrixTotal(p1.getPrixPrestation() * l1.getQuantite());
-
 		
 		LigneDeCommande l2 = new LigneDeCommande();
-		l2.setQuantite(1);
+		l2.setQuantite(4);
 		l2.setPrestation(p2);
 		l2.setPrixTotal(p2.getPrixPrestation() * l2.getQuantite());
-		//TP.setLigneDeCommande(p2.getPrixPrestation() * l2.getQuantite());
 
 		LigneDeCommande l3 = new LigneDeCommande();
-		l3.setQuantite(3);
+		l3.setQuantite(4);
 		l3.setPrestation(p3);
 		l3.setPrixTotal(p3.getPrixPrestation() * l3.getQuantite());
-		//TP.setLigneDeCommande(p3.getPrixPrestation() * l3.getQuantite());
 
 		LigneDeCommande l4 = new LigneDeCommande();
-		l4.setQuantite(5);
+		l4.setQuantite(4);
 		l4.setPrestation(p4);
 		l4.setPrixTotal(p4.getPrixPrestation() * l4.getQuantite());
-		//TP.setLigneDeCommande(p4.getPrixPrestation() * l4.getQuantite());
+
 
 		LigneDeCommande l5 = new LigneDeCommande();
-		l5.setQuantite(1);
+		l5.setQuantite(4);
 		l5.setPrestation(p5);
 		l5.setPrixTotal(p5.getPrixPrestation() * l5.getQuantite());
 		
@@ -77,20 +83,18 @@ public class PanierController {
 		lignes.add(l5);
 		lignes.add(l5);
 		
-		double result = 0.0;
-		int add=+1;
-		int moin=-1;
+		
 
+		for(int i=0; i < lignes.size(); i++) {
+			index += lignes.get(i).getPrixTotal();
+		}
 		for(int i=0; i < lignes.size(); i++) {
 			result += lignes.get(i).getPrixTotal();
 		}
 
-//		for(int i=0; i < lignes.size(),lignes.size(moin); i++) {
-//			result += lignes.get(i).getQuantite();
-//		}
-//		
-		m.addAttribute("add", add);	
-		m.addAttribute("moin", moin);	
+		
+		m.addAttribute("i", index);
+		m.addAttribute("Quantit", Quantit);
 		m.addAttribute("result", result);
 		m.addAttribute("mesLignes", lignes);
 		return "panier";
