@@ -9,7 +9,7 @@
 	<title>Dawan <sitemesh:write property='title' /></title>
 	<!-- base sert à définir une référence qui préfixera l'ensemble des liens -->
  	<base href="<%=request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + request.getContextPath() + "/"%>" />
- 	
+ 	<style type="text/css background-color: #EBD234;"></style>
 	<sitemesh:write property='head' />
 </head>
 
