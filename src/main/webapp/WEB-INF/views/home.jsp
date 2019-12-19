@@ -26,23 +26,6 @@
 	<br>
 	<section id="section1">
 			<br>
-			<div class="container-fluid btn">
-				<div class="row">
-					<div class="col-lg-8 col-xs-1"></div>
-					<div class="col">
-						<div>
-							<a></a>
-							<button type="button" class="btn btn-black">Incription</button>
-						</div>
-					</div>
-					<div class="col">
-						<div>
-						<div> <a href="login"><button type="button" class="btn btn-black">Connexion</button></a>
-						</div>
-					</div>
-					<div class="col-lg-2 col-xs-1"></div>
-				</div>
-			</div>
 			<br> <br>
 			<div class="titre">
 				<h1 align="center">Bienvenue chez Guanjia</h1>
@@ -169,7 +152,6 @@
 				</div>
 <br> <br> <br>
 			</section>
-		</div>
 	</section>
 	<br>
 	<br>
