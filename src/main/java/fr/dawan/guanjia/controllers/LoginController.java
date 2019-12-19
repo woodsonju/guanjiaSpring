@@ -52,7 +52,7 @@ public class LoginController {
 					result1 = "comptePrestataire";
 					break;
 				case ADMIN:
-					result1 = ("redirect:/admin/1/3");
+					result1 = ("redirect:/admin/1/10");
 					break;
 				}
 				return result1;

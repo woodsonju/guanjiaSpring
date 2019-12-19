@@ -25,7 +25,6 @@ public class AdminController {
 		int start = (page-1)*max;
 		List<Utilisateur> ls = utilisateurDao.findAllPagination(start, max);
 		int nbpage = (int) (utilisateurDao.count()/max+1);
-		System.out.println("il y aura pages : " + nbpage);
 		
 		m.addAttribute("usersList", ls);
 		m.addAttribute("page", page);
@@ -48,7 +47,7 @@ public class AdminController {
         	m.addAttribute("msg","Utilisateur n°" + id + " a été supprimé");
         }
         //TODO: comment récupérer "max" (nombre de lignes à afficher par page)
-		return showAllUsers(m, 1, 3);
+		return showAllUsers(m, 1, 10);
 	}
 	
 	

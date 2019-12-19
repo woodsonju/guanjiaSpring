@@ -13,18 +13,33 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	
 	<style type="text/css">
-	
+	   .myP { 
+	   color: grey;
+	   font-size: 30px;
+	   padding-top: 50px;
+	   } 
+	   
+	   .myTable{
+	   padding-top: 50px;
+	   padding-bottom: 50px;
+	   }
+	   
+	   .myDiv{
+	   padding-bottom: 50px;
+	   }
+	   
 	</style>
+	
 </head>
 
 
 
 <body>
 
-<h3>PAGE ADMIN : pour gérer des utilisateurs</h3>
+<p align="center" class="myP">Gestion des utilisateurs</p>
 
-<div class="container table-responsive text-center">
-<table border="1" class="table table-hover table-condensed ">
+<div class="container table-responsive text-center myTable">
+<table  class="table table-hover table-condensed">
 		<thead>
 			<tr>
 			    <th>Type Utilisateur</th>
@@ -43,7 +58,7 @@
 					<td>${ul.email}</td>
 					<td>
 					    <a href="admin/delete/${ul.id}" class="btn btn-danger btn-sm"><i class="fa fa-trash-o" aria-hidden="true">&nbsp;supprimer</i></a> 
-                        <a href="#" class="btn btn-info btn-sm"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;modifier</a>
+<!--                         <a href="#" class="btn btn-info btn-sm"><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp;modifier</a> -->
 					</td>
 				</tr>
 			</c:forEach>
@@ -53,17 +68,9 @@
 
 
 
-<c:if test="${page>1}">
-    <a href="admin/${page-1}/${max}">Precedent</a>
-</c:if>
-<span>page | ${page}</span>
-<c:if test="${suivExist}">
-    <a href="admin/${page+1}/${max}">Suivant</a>
-</c:if>
 
-
-
-<nav aria-label="Page navigation example">
+<div class="container table-responsive myDiv">
+<nav aria-label="Page navigation example ">
 
   <ul class="pagination pg-blue">
   <c:if test="${page>1}">
@@ -82,6 +89,7 @@
   </ul>
   
 </nav>
+</div>
 
 </body>
 </html>
