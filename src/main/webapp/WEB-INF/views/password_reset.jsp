@@ -26,7 +26,7 @@
                   <p>You can reset your password here.</p>
                   <div class="card-body">
     
-                    <form:form id="register-form" role="form" autocomplete="off" class="form" method="post">
+                    <form:form id="register-form" role="form" autocomplete="off" class="form" method="post" action="forgot">
                       <div class="input-group input-group-lg mb-3">
 					    <div class="input-group-prepend">
 					        <span class="input-group-text">
