@@ -5,12 +5,14 @@
 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
+
 <!DOCTYPE html>
 <html>
 
 <head>
 <meta charset="UTF-8">
 <title>home</title>
+
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -40,6 +42,7 @@
 						<div class="col-lg-4 d-none d-lg-block"></div>
 						<div class="col">
 							<a href="categorie/commercedeproximite"
+
 								class="btn btn-light btn-circle btn-lg stretched-link "> <img
 								src="resources/images/market.png" width="50" height="50">
 								<p>Commerce de </p>
@@ -47,6 +50,7 @@
 							</a>
 						</div>
 						<div class="col d-none d-lg-block"></div>
+
 						<div class="col">
 							<a href="#"
 								class="btn btn-light btn-circle btn-lg stretched-link">
@@ -63,6 +67,7 @@
 						<div class="col-2 d-none d-lg-block"></div>
 						<div class="col">
 							<a href="categorie/restaurant"
+
 								class="btn btn-light btn-circle btn-lg stretched-link"> <img
 								alt="" src="resources/images/restaurant.png" width="50"
 								height="50">
@@ -72,6 +77,7 @@
 						<div class="col-3 d-none d-lg-block"></div>
 						<div class="col">
 							<a href="categorie/service"
+
 								class="btn btn-light btn-circle btn-lg stretched-link"> <img
 								alt="" src="resources/images/coursier.png" width="50"
 								height="50">
@@ -84,6 +90,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-lg d-none d-lg-block" ></div>
+
 						<div class="col col-lg-2 ">
 							<a href="#"
 								class="btn btn-light btn-circle btn-lg stretched-link"> <img
@@ -93,11 +100,13 @@
 							</a>
 						</div>
 						<div class="col-lg d-none d-lg-block"></div>
+
 						<div class="col-lg-4 mx-auto align-self-center mr-3 d-none d-lg-block" >
 							<img class="panda" alt="" src="resources/images/panda.jpg"
 								width="300" height="150">
 							<h3>Don't worry use Guanjia !</h3>
 						</div>
+
 						<div class="col col-lg-2 ">
 							<a href="#"
 								class="btn btn-light btn-circle btn-lg stretched-link"> <img
@@ -111,6 +120,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-2 d-none d-lg-block"></div>
+
 						<div class="col">
 							<a href="#"
 								class="btn btn-light btn-circle btn-lg stretched-link"> <img
@@ -120,6 +130,7 @@
 							</a>
 						</div>
 						<div class="col-4 d-none d-lg-block"></div>
+
 						<div class="col">
 							<a href="#"
 								class="btn btn-light btn-circle btn-lg stretched-link"> <img
@@ -133,6 +144,7 @@
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col-4 d-none d-lg-block"></div>
+
 						<div class="col">
 							<a href="#"
 								class="btn btn-light btn-circle btn-lg stretched-link"> <img
@@ -142,6 +154,7 @@
 							</a>
 						</div>
 						<div class="col d-none d-lg-block"></div>
+
 						<div class="col">
 							<a href="#"
 								class="btn btn-light btn-circle btn-lg stretched-link"> <img
@@ -151,7 +164,7 @@
 							</a>
 						</div>
 						<div class="col-5 d-none d-lg-block"></div>
-					</div>
+
 				</div>
 <br> <br> <br>
 			</section>
@@ -162,11 +175,6 @@
 </body>
 
 </html>
-
-
-
-
-
 
 
 
