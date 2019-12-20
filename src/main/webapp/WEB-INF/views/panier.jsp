@@ -32,7 +32,7 @@
 	<table class="w3-table">
 		<tr>
 			<th></th>
-			<th>ID Produit</th>
+			<th>Produit</th>
 			<th>Prestation</th>
 			<th>Prix/unit&eacute; &euro;</th>
 			<th>Quantit&eacute;</th>
@@ -44,7 +44,7 @@
 			<tr>
 				<td></td>
 				<td>${ ligne.prestation.description }</td>
-				<td><strong>Prestation</strong></td>
+				<td><strong>Produit</strong></td>
 				<td class="price"><strong> <fmt:formatNumber
 							value="${ ligne.prestation.prixPrestation}" pattern="##.##" />&euro;
 				</strong></td>
