@@ -1,5 +1,6 @@
 package fr.dawan.guanjia.controllers;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.SimpleMailMessage;
@@ -11,9 +12,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import fr.dawan.guanjia.dao.UtilisateurDao;
 import fr.dawan.guanjia.entities.Utilisateur;
+import fr.dawan.guanjia.validator.ResetPasswordValidator;
 
 
 @Controller
@@ -25,11 +28,14 @@ public class LoginController {
 	
 	@Autowired
 	private JavaMailSender emailSender;
+	
+	@Autowired
+	ResetPasswordValidator resetPasswordValidator;
 		
 	// @RequestMapping(value = "/login", method = RequestMethod.GET)
 	@GetMapping(value = "/login")
 	public String showLogin(Model m) {
-		m.addAttribute("utilisateur-form", new Utilisateur()); // TODO:impossible instancier Utilisateur, car abstrait
+		m.addAttribute("utilisateur-form", new Utilisateur()); 
 		// Aller sur login.jsp avec "user-form"
 		return "login";
 	}
@@ -105,10 +111,32 @@ public class LoginController {
 	
 	
 	@GetMapping("/creer-mot-de-passe")
-	public String modifyMotDePasse(Model model) {
-		
+	public String getPageforNewPassWord(Model model) {
+		model.addAttribute("utilisateur-resetpassword", new Utilisateur());
 		return "password_reset";
 	}
 	
-	
+	@PostMapping("/creer-mot-de-passe")
+	public String createPassWord(Model model, @Valid @ModelAttribute("utilisateur-resetpassword") Utilisateur u,
+			BindingResult result, RedirectAttributes redirectAttributes
+			) {
+		
+		resetPasswordValidator.validate(u, result);
+		System.out.println("rentre dans le post");
+		System.out.println("Prenom : " + u);
+		if (result.hasErrors()) {
+			model.addAttribute("errors", result.getAllErrors());
+			model.addAttribute("utilisateur-resetpassword", u);
+			System.out.println("erroooooooooooooooooooooooor");
+			return "send_mail_for_reset_password";
+		} else {
+			System.out.println("----------" + u.getTypeUtilisateur() + "----------");
+				
+				utilisateurDao.udpadteByEmal(u.getEmail());
+				System.out.println("new email : " + u.getEmail());
+				redirectAttributes.addFlashAttribute("msg", "Ton compte a été crée avec succès");
+				return "home";
+
+			}
+	}
 }

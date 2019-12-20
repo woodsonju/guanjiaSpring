@@ -29,6 +29,23 @@ public class UtilisateurDao {
 			em.merge(utilisateur);
 	}
 	
+	@Transactional
+	public void udpadteByEmal(String email) {
+		em.createQuery("UPDATE Utilisateur u SET u.email= :email ")
+				.setParameter("email", email).executeUpdate();
+		
+		/**
+		 * Query query = session.createQuery("update Stock set stockName = :stockName" +
+    				" where stockCode = :stockCode");
+		query.setParameter("stockName", "DIALOG1");
+		query.setParameter("stockCode", "7277");
+		int result = query.executeUpdate();
+		
+		
+		update Student s set e=s.marks=50 where s.studentId=10;
+		 */
+	}
+	
 	@Transactional(readOnly = true)
 	public Utilisateur findById(long id) {
 		return em.find(Utilisateur.class, id);
@@ -85,6 +102,7 @@ public class UtilisateurDao {
 		Long nb = (Long) em.createQuery("SELECT COUNT(u.id) FROM Utilisateur u").getSingleResult();
 		return nb;
 	}
+	
 	
 	
 }

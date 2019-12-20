@@ -119,6 +119,11 @@ public  class Utilisateur extends DbObject implements Serializable{
 		this.confirmpwd = confirmpwd;
 	}
 
-
+	@Override
+	public String toString() {
+		return "Utilisateur [nom=" + nom + ", prenom=" + prenom + ", numTelephone=" + numTelephone + ", email=" + email
+				+ ", pwd=" + pwd + ", confirmpwd=" + confirmpwd + ", statut=" + statut + ", typeUtilisateur="
+				+ typeUtilisateur + "]";
+	}
 	
 }
