@@ -160,6 +160,7 @@ ul {
 </head>
 <body>
 
+<!-- pour committer, supprimer stp -->
 	<section class="our-webcoderskull padding-lg">
 
 		<div class="container">
