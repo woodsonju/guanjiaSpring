@@ -2,6 +2,8 @@ package fr.dawan.guanjia.controllers;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,6 +22,9 @@ public class LoginController {
 
 	@Autowired
 	UtilisateurDao utilisateurDao;
+	
+	@Autowired
+	private JavaMailSender emailSender;
 		
 	// @RequestMapping(value = "/login", method = RequestMethod.GET)
 	@GetMapping(value = "/login")
@@ -71,13 +76,39 @@ public class LoginController {
 		return "home";
 	}
 	
-	@GetMapping(value="/pwdreset")
-	public String getPwdReset(HttpSession session, Model model) {
-		return "password_reset";
-	}
-	
+
 	@ModelAttribute("isConnected")
 	public Boolean initSessionIsConnected() {
 		return false;
 	}
+	
+	
+	@GetMapping(value="/mot-de-passe-oublie")
+	public String getPwdReset(HttpSession session, Model model) {
+		return "send_mail_for_reset_password";
+	}
+	
+
+	//Pour un mail htlm
+	@PostMapping("/mot-de-passe-oublie")
+	public String sendMail(Model model, @ModelAttribute("utilisateur-form") Utilisateur u,
+			BindingResult result) {
+		SimpleMailMessage passwordResetEmail = new SimpleMailMessage();
+		//passwordResetEmail.setFrom("support@demo.com");
+		passwordResetEmail.setTo(u.getEmail());
+		passwordResetEmail.setSubject("Mot de passe oublié");
+		passwordResetEmail.setText("Vous avez oublié ou perdu votre mot de passe.\r\n" + 
+				"Pour en créer un nouveau, merci de cliquer sur le lien suivant :\n" + "http://localhost:8080/guanjia/creer-mot-de-passe");
+		emailSender.send(passwordResetEmail);
+		return "home";
+	}
+	
+	
+	@GetMapping("/creer-mot-de-passe")
+	public String modifyMotDePasse(Model model) {
+		
+		return "password_reset";
+	}
+	
+	
 }
