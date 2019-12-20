@@ -1,5 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ page session="false" %>
 
 <html>
 <head>
@@ -17,9 +19,12 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-<!-- <script src="/guanjia/resources/js/increment.js"></script>
- --></head>
+
+
+</head>
 <body>
+
+<section id="section1">
 
 	<div class="col-md-12">
 		<h2 style="text-align: center">Votre panier</h2>
@@ -32,10 +37,10 @@
 			<th>Prix/unit&eacute; &euro;</th>
 			<th>Quantit&eacute;</th>
 			<th>Total ligne &euro;</th>
-			<th></th>
 		</tr>
 
-		<c:forEach items="${ mesLignes }" var="ligne" varStatus="i" >
+		<!-- <form:form method="post" action="/panier"> -->
+		<c:forEach items="${ mesLignes }" var="ligne" varStatus="i">
 			<tr>
 				<td></td>
 				<td>${ ligne.prestation.description }</td>
@@ -48,23 +53,33 @@
 						<tr>
 							<td><div class="quantite input-group sm-2">
 									<span class="input-group-btn"></span>
-										<button onclick="decrement(${i.index})" type="button" class="btn btn-info btn-number"
-											data-type="minus" data-field="quant[1]">
+									
+									<form:form method="post" action="panier/moins" name="less" modelAttribute="formMoins">
+										<!--  
+											ici c'est i.index+1 , parce index commence toujours a 0 alors que les id commencent a 1 
+											si c'est le champ 0 -> l'id du produit c'est 1 etc.. 
+										-->
+										<form:input path="id" type="hidden" name="id" value="${i.index+1}"/>
+										<button type="submit" class="btn btn-info btn-number">
 											<span class="number glyphicon glyphicon-minus"></span>
 										</button>
-									 <input type="text" id="i${i.index}" name="quant[i]"
-										class="form-control input-number" value="1">
-									<span class="input-group-btn"></span>
-										<button onclick="increment(${i.index})" type="button" class="btn btn-success btn-number"
-											data-type="plus" data-field="quant[1]">
+									</form:form>
+									<input type="text" name="quant[i]"
+										class="form-control input-number" value="${ligne.quantite}"> <span
+										class="input-group-btn"></span>
+									
+									<form:form method="post" action="panier/ajouter" name="plus" modelAttribute="formAdd">
+										<form:input path="id" type="hidden" name="id2" value="${i.index+1}"/>
+										<button type="submit"	class="btn btn-success btn-number">
 											<span class="number glyphicon glyphicon-plus"></span>
 										</button>
-									
+									</form:form>
+
 								</div></td>
-								
-								<td class="price"><strong> <fmt:formatNumber type = "number"
-							value="${result}" pattern="##.##" /><fmt:setLocale value = "en_EURO"/>
-				</strong></td>
+
+							<td class="totalPrice"><strong> <fmt:formatNumber
+										type="number" value="${ligne.prixTotal}" pattern="##.##" />&euro;
+							</strong></td>
 						</tr>
 					</table>
 
@@ -76,6 +91,7 @@
 				<td>
 			</tr>
 		</c:forEach>
+		<!-- </form:form> --> 
 	</table>
 
 	<div class="row">
@@ -84,6 +100,7 @@
 			<a>Total / Panier</a>
 			<table class="col-sm-3 " style="background-color: green;">
 				<tr>
+					<!--  A quoi correspond result ? a la somme de tous les produit ok, il faut le creer alors-->
 					<td class="price"><fmt:formatNumber value="${result}"
 							pattern="##.##" />&euro;</td>
 					<td></td>
@@ -115,10 +132,6 @@
 		</div>
 	</div>
 
-
-
-
-
 	<section class="version desktop">
 		<div class="container-fluid">
 			<div class="row">
@@ -146,7 +159,7 @@
 			</div>
 		</div>
 	</section>
-
+</section> 
 
 </body>
 </html>

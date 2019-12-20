@@ -100,12 +100,15 @@ function increment(index) {
 	let i = '#i'+index;
 	let inputElt = document.querySelector(i);
 	index =  parseInt($(this).attr('min',0));   
-	inputElt.value++,100;
+	inputElt.value++;
+	let prix = document.querySelector('td[class="price"]').textContent;
+	let total = +document.querySelector('td[class="totalPrice"]').value;
+	total += prix;
 }
 
 function decrement(index) {
 	let i = '#i'+index;
 	let inputElt = document.querySelector(i);
 	index =  parseInt($(this).attr('max',100));
-	inputElt.value--,0;
+	inputElt.value--;
 }

@@ -4,6 +4,10 @@ input {
 	height: 30px;
 }
 
+#section1 {
+	background-color: #EBD234;
+}
+
 .qty .plus {
 	cursor: pointer;
 	display: inline-block;
