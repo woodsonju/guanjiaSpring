@@ -57,11 +57,7 @@
 						src="resources/images/compte.png" alt="Logo" style="width: 40px;"></a>
 					<a class="nav-link">Compte</a>
 				</li>
-				<li
-					class="nav-item align-middle justify-content-center row align-items-center"
-					style="height: 60px"><a href="inscription">
-					<button type="button" class="btn btn-black ">Inscription</button></a>
-				</li>
+				
 				<li
 					class="nav-item align-middle justify-content-center row align-items-center mh-100"
 					style="height: 60px">
@@ -72,6 +68,13 @@
 							</c:when>
 							<c:otherwise>
 								<a href="login"><button type="button" class="btn btn-black">Connexion</button></a>
+								
+								<li
+					class="nav-item align-middle justify-content-center row align-items-center"
+					style="height: 60px"><a href="inscription">
+					<button type="button" class="btn btn-black ">Inscription</button></a>
+				</li>
+				
 							</c:otherwise>
 						</c:choose>		
 				</li>

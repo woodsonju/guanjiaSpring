@@ -45,10 +45,10 @@ public class LoginController {
 				model.addAttribute("isConnected", true);
 				switch (dbClient.getTypeUtilisateur()) {
 				case CLIENT:
-					result1 = "home";
+					result1 = "gestionCompteClient";
 					break;
 				case PRESTATAIRE:
-					result1 = "comptePrestataire";
+					result1 = "gestionComptePrestataire";
 					break;
 				case ADMIN:
 					result1 = ("redirect:/admin/1/10");

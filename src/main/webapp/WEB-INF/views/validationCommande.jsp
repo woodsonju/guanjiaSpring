@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -10,7 +9,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>Gestion Compte Client</title>
+<title>Commande</title>
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
@@ -21,171 +20,26 @@
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css"
-	href="resources/css/gestionCompteClient.css" />
+	href="resources/css/validationCommande.css" />
 </head>
 
 <body>
 	<br>
-	<section id="section3">
+	<section id="section6">
 
-		<br> <br> <br>
+		<br> <br> <br> <br>
 
 		<div class="titre">
-			<h1 align="center">Compte Client</h1>
+			<h1 align="center">Validez votre livraison</h1>
 		</div>
 
-		<br> <br>
+		<br> 
 
 		<div class="container">
 
-			<form action="#" method="post" role="form" autocomplete="off">
+			<form action="#" method="get" role="form" autocomplete="off">
 
-				<div class="row">
-					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12">
-						<div class="card card-outline-secondary">
-							<div class="card-header" style="background-color: #E5E1E1">
-								<h3 class="mb-0">Coordonnées</h3>
-							</div>
-							<div class="card-body">
-
-								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Nom</label>
-									<div class="col-md-6 col-9">
-										<input type="text" class="form-control" name="nom" id="nom"
-											placeholder="nom" value="JUSTE" required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Prénom</label>
-									<div class="col-md-6 col-9">
-										<input class="form-control" type="text" name="prenom"
-											id="prenom" placeholder="Prenom" value="Woodson" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Date
-										de naissance</label>
-									<div class="col-md-6 col-9">
-										<input class="form-control" type="text" name="datenaissance"
-											id="datenaissance" placeholder="datenaissance"
-											value="23/01/1986" required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Email</label>
-									<div class="col-md-6 col-9">
-										<input type="email" class="form-control" name="email"
-											id="email" placeholder="email" value="wood@gmail.com"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Téléphone</label>
-									<div class="col-md-6 col-9">
-										<input type="text" class="form-control" name="numTelephone"
-											id="telephone" placeholder="telephone" value="0564847515"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12">
-						<div class="card card-outline-secondary">
-							<div class="card-header" style="background-color: #E4E1E1">
-								<h3 class="mb-0">Connexion au compte</h3>
-							</div>
-							<div class="card-body">
-								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Identifiant</label>
-									<div class="col-md-6 col-9">
-										<input type="email" class="form-control" name="email"
-											id="email" placeholder="email" value="pizzatheque@gmail.com"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Mot
-										de passe actuel</label>
-									<div class="col-md-6 col-9">
-										<input type="password" class="form-control" name="pwd"
-											id="pwd" placeholder="pwd" value="dawan2019" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Nouveau
-										Mot de passe</label>
-									<div class="col-md-6 col-9">
-										<input type="password" class="form-control" name="pwd"
-											id="pwd" placeholder="8 caractères min" value="" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-
-								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Confirmer
-										nouveau Mot de passe</label>
-									<div class="col-md-6 col-9">
-										<input type="password" class="form-control" name="pwd"
-											id="pwd" placeholder="8 caractères min" value="" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+							
 				<div class="row" style="margin-top: 60px">
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12">
 						<div class="card card-outline-secondary">
@@ -315,7 +169,6 @@
 								<div class="form-group row">
 									<label class="col-md-4 col-form-label form-control-label">Voie</label>
 									<div class="col-md-6 col-9">
-
 										<select id="inputState" class="form-control">
 											<option selected>avenue</option>
 											<option>boulevard</option>
@@ -377,18 +230,104 @@
 					</div>
 				</div>
 				
-				<div class="row">
-					<div
-						class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 offset-md-9">
-						<input class="btn"
-							style="background-color: #C88A7D; margin-top: 50px; margin-bottom: 50px"
-							type="submit" value="Valider les modifications" />
-					</div>
-				</div>
+				
 			</form>
 
 		</div>
+		
 		<br>
+		<br>
+		<br>
+		
+		<div class="titre">
+			<h2 align="center">Horaire de livraison</h2>
+		</div>
+		<br>
+		<br>
+		
+		<div class ="row">
+			<div class="col-2"></div>
+			<div class="col-3 align-middle justify-content-center row align-items-center">
+				<label>Dès que possible</label>
+			</div>
+			<div class="col-2"></div>
+			<div class="col-3 align-middle justify-content-center row align-items-center">
+				<label>Plus tard</label>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		
+		<div class ="row">
+			<div class="col-2"></div>
+			<div class="col-3">
+				<input type="text" class="form-control" placeholder="ville" value="20 - 30 minutes" required disabled>
+			</div>
+			<div class="col-2"></div>
+			<div class="col-3">
+				<select id="inputState" class="form-control ">
+					<option selected>Choix horaire</option>
+					<option>09:00</option>
+					<option>10:00</option>
+					<option>11:00</option>
+					<option>12:00</option>
+					<option>13:00</option>
+					<option>14:00</option>
+					<option>15:00</option>
+					<option>16:00</option>
+					<option>17:00</option>
+					<option>18:00</option>
+					<option>19:00</option>
+					<option>20:00</option>
+				</select>
+			</div>
+			<div class="col-2"></div>
+		</div>
+		
+		<br> <br> 
+		
+		<div class="row">
+			<div
+				class="col align-middle justify-content-center row align-items-center">
+				<input class="btn"
+					style="background-color: #C88A7D; margin-top: 50px; margin-bottom: 50px"
+					type="submit" value="Valider la livraison" />
+			</div>
+		</div>
+		
+		<br> <br> 
+		
+		<div class="container-fluid">
+
+			<div class="row align-middle justify-content-center row align-items-center">
+			
+				<div class="col-1"></div>
+				
+				<div class="col-1 align-middle justify-content-center row align-items-center">
+					<img src="resources/images/Ppanier2.png"class="img-fluid" alt="Responsive image">
+				</div>
+				
+				<div class="col-1"></div>
+				
+				<div class="col-1 align-middle justify-content-center row align-items-center">
+					<img src="resources/images/Pcarte2.png" class="img-fluid" alt="Responsive image">
+				</div>
+				<div class="col-1"></div>
+				
+				<div class="col-1 align-middle justify-content-center row align-items-center">
+					<img src="resources/images/Pagreement2.png" class="img-fluid" alt="Responsive image">
+				</div>
+				
+				<div class="col-1"></div>
+				
+				<div class="col-1 align-middle justify-content-center row align-items-center">
+					<img src="resources/images/Plivraison3.png" class="img-fluid" alt="Responsive image">
+				</div>
+				
+				<div class="col-1"></div>
+			</div>
+		</div>
+		<br>
+	<br>
 	</section>
 	<br>
 	<br>
