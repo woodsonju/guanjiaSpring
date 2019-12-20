@@ -48,7 +48,7 @@
 					<h3>Chauffeur</h3>
 					<!-- <span>Bread / Rosemary / Orange</span> -->
 				</div>
-				<a href="" ><img src="resources/images/categorie_service_chefcuisinier.jpg" alt="gallery img"></a>
+				<a href="souscategorie/chef_cuisinier" ><img src="resources/images/categorie_service_chefcuisinier.jpg" alt="gallery img"></a>
 				<div>
 					<h3>Chef Cuisinier</h3>
 					<!-- <span>Bread / Rosemary / Orange</span> -->
