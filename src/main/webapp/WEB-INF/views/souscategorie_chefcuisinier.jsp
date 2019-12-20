@@ -178,7 +178,7 @@ ul {
 								class="img-responsive" alt="">
 						</figure>
 						<h3>
-							<a href="#">Pierre DUPONT</a>
+							<a href="prestataire/chef_cuisinier">Pierre DUPONT</a>
 						</h3>
 						<p>chef étoilé</p>
 						<ul class="follow-us clearfix">
