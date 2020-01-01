@@ -3,7 +3,7 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ page session="true" %>
 
-<!DOCTYPE html>
+<%-- <!DOCTYPE html>
 
 <head> 
 	<link rel="stylesheet"
@@ -11,7 +11,7 @@
     <title>Login/Register Form</title>
     <base href="<%=request.getScheme()+"://"+request.getServerName()
         +":"+request.getServerPort() + request.getContextPath() + "/"%>" />
-</head>
+</head> --%>
 <body>
 
 
@@ -27,21 +27,24 @@
                    Nous vous enverrons un mail à cette adresse contenant un lien vous permettant d'en créer un nouveau.</p>
                   <div class="card-body">
     
-                    <form:form id="register-form" role="form" autocomplete="off" class="form" method="post" action="">
-                      <div class="input-group input-group-lg mb-3">
-					    <div class="input-group-prepend">
-					        <span class="input-group-text">
-					            <i class="fa fa-envelope-o fa_custom fa"></i>
-					        </span>
-					    </div>
-                        <input id="email" name="email" placeholder="email address" class="form-control"  type="email">
-					</div>
-                      <div class="form-group">
-                        <input name="recover-submit" class="btn btn-md btn-primary btn-block" value="Valider" type="submit">
-                      </div>
-                      
-                      <input type="hidden" class="hide" name="token" id="token" value=""> 
-                    </form:form>
+                    <form:form id="register-form" role="form"  class="form" method="post" action="mot-de-passe-oublie" modelAttribute="utilisateur-sendmailforpwd" autocomplete="off">
+	                    <div class="input-group input-group-lg mb-3">
+						    <div class="input-group-prepend">
+						        <span class="input-group-text">
+						            <i class="fa fa-envelope-o fa_custom fa"></i>
+						        </span>
+						    </div>
+	                        <form:input path="email" id="email"  placeholder="email address" class="form-control"  type="email"/>
+							<form:errors path="email" cssClass="error" cssStyle="color:#F52508"/>
+						</div>
+	            
+	                     <div class="form-group">
+							<button type="submit" class="btn btn-md btn-primary btn-block">Valider</button>
+						</div>
+	                      
+<!-- 	                      <input type="hidden" class="hide" name="token" id="token" value=""> 
+ -->                    
+					 </form:form>
     
                   </div>
                 </div>

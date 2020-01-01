@@ -81,10 +81,10 @@ public class InscriptionValidator implements Validator{
 			errors.rejectValue("email", "utilisateur.email.invalid");
 		}
 		
-		if(utilisateurDao.EmailExists(user.getEmail())) {
-			System.out.println("defdefdfdf : ");
-			errors.rejectValue("email", "utilisateur.email.exists");
-		}
+//		if(utilisateurDao.EmailExists(user.getEmail())) {
+//			System.out.println("defdefdfdf : ");
+//			errors.rejectValue("email", "utilisateur.email.exists");
+//		}
 
 
 	}

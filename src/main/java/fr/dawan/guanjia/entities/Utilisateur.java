@@ -33,6 +33,10 @@ public  class Utilisateur extends DbObject implements Serializable{
 	
 	@Enumerated(EnumType.STRING)
 	private TypeUtilisateur typeUtilisateur;
+	
+	//On pourra identifier l'utilisateur via ce jeton qui sera dans l'url
+	//Le token va me permettre de récuperer l'utilisateur
+	public String resetToken;
 
 	
 	public Utilisateur() {
@@ -118,6 +122,18 @@ public  class Utilisateur extends DbObject implements Serializable{
 	public void setConfirmpwd(String confirmpwd) {
 		this.confirmpwd = confirmpwd;
 	}
+	
+	
+
+	public String getResetToken() {
+		return resetToken;
+	}
+
+
+	public void setResetToken(String resetToken) {
+		this.resetToken = resetToken;
+	}
+
 
 	@Override
 	public String toString() {

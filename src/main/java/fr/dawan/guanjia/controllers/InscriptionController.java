@@ -25,10 +25,10 @@ import fr.dawan.guanjia.validator.InscriptionValidator;
 public class InscriptionController {
 	
 	@Autowired
-	UtilisateurDao utilisateurDao;
+	private UtilisateurDao utilisateurDao;
 	
 	@Autowired
-	InscriptionValidator inscriptionValidator;
+	private InscriptionValidator inscriptionValidator;
 	
 	@GetMapping("/inscription")
 	public String consulterCompte(Model model) {

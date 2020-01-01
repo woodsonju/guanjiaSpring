@@ -30,9 +30,9 @@ public class UtilisateurDao {
 	}
 	
 	@Transactional
-	public void udpadteByEmal(String email) {
-		em.createQuery("UPDATE Utilisateur u SET u.email= :email ")
-				.setParameter("email", email).executeUpdate();
+	public void udpadteByPWD(String pwd) {
+		em.createQuery("UPDATE Utilisateur u SET u.pwd= :pwd ")
+				.setParameter("pwd", pwd).executeUpdate();
 		
 		/**
 		 * Query query = session.createQuery("update Stock set stockName = :stockName" +
@@ -50,6 +50,7 @@ public class UtilisateurDao {
 	public Utilisateur findById(long id) {
 		return em.find(Utilisateur.class, id);
 	}
+	
 	
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true)
@@ -70,6 +71,18 @@ public class UtilisateurDao {
 		List<Utilisateur> utilisateurs = em.createQuery("FROM Utilisateur u WHERE u.email= :email")
 			.setParameter("email", email)
 			.getResultList();
+		Utilisateur u = null;
+		if(utilisateurs!=null && utilisateurs.size()>0)
+			u = utilisateurs.get(0);	
+		return u;
+	}
+	
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly = true)
+	public Utilisateur findByResetToken(String resetToken) {
+		List<Utilisateur> utilisateurs = em.createQuery("FROM Utilisateur u WHERE u.resetToken= :resetToken")
+				.setParameter("resetToken", resetToken)
+				.getResultList();
 		Utilisateur u = null;
 		if(utilisateurs!=null && utilisateurs.size()>0)
 			u = utilisateurs.get(0);	

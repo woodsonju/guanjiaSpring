@@ -1,12 +1,17 @@
 package fr.dawan.guanjia.validator;
 
+import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 import fr.dawan.guanjia.entities.Utilisateur;
 
+@Component
 public class ResetPasswordValidator implements Validator{
+	
+	//private static final Pattern EMAIL_REGEX1 = Pattern.compile("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
+
 
 	@Override
 	public boolean supports(Class<?> clazz) {
@@ -15,6 +20,7 @@ public class ResetPasswordValidator implements Validator{
 
 	@Override
 	public void validate(Object target, Errors errors) {
+		//ValidationUtils.rejectIfEmpty(errors, "email", "utilisateur.email.empty");
 		ValidationUtils.rejectIfEmpty(errors, "pwd", "utilisateur.pwd.empty");
 		
 		Utilisateur user = (Utilisateur) target;
@@ -38,6 +44,10 @@ public class ResetPasswordValidator implements Validator{
 				!user.getPwd().equals(user.getConfirmpwd())){
 			errors.rejectValue("pwd", "utilisateur.pwd.confirmPwd");
 		}
+//		
+//		if (user.getEmail() != null && !EMAIL_REGEX1.matcher(user.getEmail()).matches()) {
+//			errors.rejectValue("email", "utilisateur.email.invalid");
+//		}
 
 	
 	}

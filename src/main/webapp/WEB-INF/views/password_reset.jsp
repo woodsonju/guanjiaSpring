@@ -27,6 +27,9 @@
                   <div class="card-body">
     
                     <form:form class="form" id="register-form1" role="form" method="post" action="creer-mot-de-passe"  modelAttribute="utilisateur-resetpassword" autocomplete="off">
+                     
+                      <form:input path="resetToken" type="hidden" value="${resetToken}"/>
+                      
                       <div class="input-group input-group-lg mb-3">
 					    <div class="input-group-prepend">
 					        <span class="input-group-text">
@@ -43,8 +46,8 @@
 					            <i class="fa fa-unlock-alt"></i>
 					        </span>
 					    </div>
-                        <form:input id="inputPassword2" path="pwd" placeholder="Confirmation de mot de passe" class="form-control"  type="password"/>
-						<form:errors path="pwd" cssClass="error" cssStyle="color:#F52508"/>
+                        <form:input id="inputPassword2" path="confirmpwd" placeholder="Confirmation de mot de passe" class="form-control"  type="password"/>
+						<form:errors path="confirmpwd" cssClass="error" cssStyle="color:#F52508"/>
 					</div>
 					
                       <div class="form-group">
