@@ -8,12 +8,14 @@
 <html>
 
 <head>
-<meta charset="UTF-8">
-<title>Connexion</title>
-<base
-	href="<%=request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-					+ request.getContextPath() + "/"%>" />
-<link rel="stylesheet" type="text/css" href="resources/css/login.css" />
+	<meta charset="UTF-8">
+	<title>Connexion</title>
+	<base
+		href="<%=request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+						+ request.getContextPath() + "/"%>" />
+	<link rel="stylesheet" type="text/css" href="resources/css/login.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+
 </head>
 
 
@@ -79,7 +81,7 @@
 				<div class="col col-md-6"></div>
 				<div>
 					<div>
-						<a href="#" id="forgot_pswd">Mot de passe oublié</a>
+						<a href="mot-de-passe-oublie" id="forgot_pswd">Mot de passe oublié</a>
 					</div>
 				</div>
 				<div class="col col-md-5"></div>

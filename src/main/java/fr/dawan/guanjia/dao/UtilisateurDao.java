@@ -4,10 +4,13 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
+
 import org.springframework.transaction.annotation.Transactional;
 import fr.dawan.guanjia.entities.Utilisateur;
 
+
 public class UtilisateurDao {
+	
 	@PersistenceContext
 	protected EntityManager em;
 
@@ -49,6 +52,7 @@ public class UtilisateurDao {
 		
 	}
 	
+	
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true)
 	public Utilisateur findByEmail(String email) {
@@ -59,6 +63,19 @@ public class UtilisateurDao {
 			u = utilisateurs.get(0);
 		return u;
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Transactional(readOnly = true)
+	public Utilisateur findByResetToken(String resetToken) {
+		List<Utilisateur> utilisateurs = em.createQuery("FROM Utilisateur u WHERE u.resetToken= :resetToken")
+				.setParameter("resetToken", resetToken)
+				.getResultList();
+		Utilisateur u = null;
+		if(utilisateurs!=null && utilisateurs.size()>0)
+			u = utilisateurs.get(0);	
+		return u;
+	}
+	
 
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true)
@@ -68,12 +85,14 @@ public class UtilisateurDao {
 		return ls;
 	}
 
+	
 	@SuppressWarnings("unchecked")
 	@Transactional(readOnly = true)
 	public boolean EmailExists(String email) {
 		List<Utilisateur> ls = em.createQuery("Select u FROM Utilisateur u WHERE u.email= :email")
-				.setParameter("email", email).getResultList();
-		if (ls.size() > 0) // email existe déjà dans la base de données
+				.setParameter("email", email)
+				.getResultList();
+		if(ls.size() > 0) //email existe déjà dans la base de données
 			return true;
 		return false;
 	}
@@ -82,4 +101,5 @@ public class UtilisateurDao {
 		Long nb = (Long) em.createQuery("SELECT COUNT(u.id) FROM Utilisateur u").getSingleResult();
 		return nb;
 	}
+
 }

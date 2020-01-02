@@ -1,3 +1,5 @@
+
+package fr.dawan.guanjia.dao;
 //package fr.dawan.guanjia.dao;
 //
 //import java.util.Set;

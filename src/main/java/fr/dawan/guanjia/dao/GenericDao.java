@@ -3,7 +3,12 @@ package fr.dawan.guanjia.dao;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.persistence.TypedQuery;
 
 import org.springframework.transaction.annotation.Transactional;
@@ -15,34 +20,41 @@ import fr.dawan.guanjia.entities.DbObject;
  * @author w.juste Create des méthodes simples create, delete, update, findById
  */
 public class GenericDao {
+
+	
 	@PersistenceContext
 	protected EntityManager em;
-
+	
 	@Transactional
 	public <T extends DbObject> T saveAndUpdate(T entity) {
-		if (entity != null && entity.getId() == 0) {
+		if(entity != null && entity.getId()==0) {
 			em.persist(entity);
 		} else {
 			em.merge(entity);
 		}
 		return entity;
 	}
-
+	
+	
 	@Transactional(readOnly = true)
 	public <T extends DbObject> T find(long id, Class<T> clazz) {
 		return em.find(clazz, id);
 	}
-
+	
 	@Transactional(readOnly = true)
 	public <T extends DbObject> List<T> findAll(Class<T> clazz) {
-		TypedQuery<T> tq = em.createQuery("SELECT entity FROM " + clazz.getName() + " entity", clazz);
+		TypedQuery<T> tq = em.createQuery("SELECT entity FROM " + clazz.getName() + " entity" ,clazz);
 		return tq.getResultList();
 	}
-
+	
 	@Transactional
 	public <T extends DbObject> void delete(T entity) {
-		em.remove(em.contains(entity) ? entity : em.merge(entity));
-	}// public static <T extends DbObject> T create(T entity) {
+		em.remove(em.contains(entity)?entity:em.merge(entity));
+	}
+	
+
+	
+//	public static <T extends DbObject> T create(T entity) {
 //		if(entity != null && entity.getId() == 0) {
 //			EntityManager entityManager = createEntityManager();
 //			EntityTransaction entityTransaction = entityManager.getTransaction();

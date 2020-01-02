@@ -10,12 +10,14 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @DiscriminatorValue("PRESTATAIRE")
 public class Prestataire extends Utilisateur {
+	
+//	@NotEmpty
 	private String raisonSocial;
-	private String numTelephone;
 	
 	
 	@ManyToMany(mappedBy = "listPrestataire")
@@ -39,13 +41,6 @@ public class Prestataire extends Utilisateur {
 		this.raisonSocial = raisonSocial;
 	}
 
-	public String getNumTelephone() {
-		return numTelephone;
-	}
-
-	public void setNumTelephone(String numTelephone) {
-		this.numTelephone = numTelephone;
-	}
 
 	public List<Prestation> getListPrestation() {
 		return listPrestation;

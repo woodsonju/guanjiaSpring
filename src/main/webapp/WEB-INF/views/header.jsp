@@ -1,3 +1,4 @@
+  
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -70,11 +71,10 @@
 								<a href="login"><button type="button" class="btn btn-black">Connexion</button></a>
 								
 								<li
-					class="nav-item align-middle justify-content-center row align-items-center"
-					style="height: 60px"><a href="inscription">
-					<button type="button" class="btn btn-black ">Inscription</button></a>
-				</li>
-				
+									class="nav-item align-middle justify-content-center row align-items-center"
+									style="height: 60px"><a href="utilisateur/inscription">
+									<button type="button" class="btn btn-black ">Inscription</button></a>
+								</li>
 							</c:otherwise>
 						</c:choose>		
 				</li>
@@ -82,4 +82,4 @@
 	</div>
 </nav>
 </body>
-</html>
+
