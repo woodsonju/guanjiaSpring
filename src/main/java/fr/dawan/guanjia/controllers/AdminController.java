@@ -18,7 +18,6 @@ public class AdminController {
 
 	@Autowired
 	UtilisateurDao utilisateurDao;
-
 	
 	@GetMapping("/{page}/{max}")
 	public String showAllUsers(Model m, @PathVariable(name="page") int page, @PathVariable(name="max") int max ) {

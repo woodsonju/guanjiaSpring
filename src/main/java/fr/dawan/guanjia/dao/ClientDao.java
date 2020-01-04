@@ -1,19 +1,12 @@
 
 package fr.dawan.guanjia.dao;
 
-import java.util.List;
-import java.util.Set;
-
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import org.springframework.transaction.annotation.Transactional;
 
-import fr.dawan.guanjia.entities.Adresse;
 import fr.dawan.guanjia.entities.Client;
-import fr.dawan.guanjia.entities.TypeAdresse;
-import fr.dawan.guanjia.entities.Utilisateur;
 
 public class ClientDao {
 
