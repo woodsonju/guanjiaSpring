@@ -49,7 +49,7 @@
 				<li
 					class="nav-item active align-middle justify-content-center row align-items-center"
 					style="height: 60px"><a class="nav-link align-self-center"
-					href="/panier"><img src="resources/images/panier.png"
+					href="panier"><img src="resources/images/panier.png"
 						alt="Logo" style="width: 40px;"></a> <a class="nav-link">Panier</a>
 				</li>
 				<li
