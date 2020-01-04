@@ -4,20 +4,29 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 @Entity
 public class Adresse extends DbObject {
+	
 	private String libelle;
 	private String nomDeVoie;
 	private String codePostale;
 	private String Ville;
 	private String pays;
+	private int numVoie;
+	
 	@Enumerated(EnumType.STRING)
 	private TypeAdresse typeAdresse;
+	
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Client client;
+	
 	@OneToOne(optional = true, mappedBy = "adresse", cascade = CascadeType.ALL)
 	private Prestataire prestataire;
 
@@ -84,6 +93,15 @@ public class Adresse extends DbObject {
 	public void setTypeAdresse(TypeAdresse typeAdresse) {
 		this.typeAdresse = typeAdresse;
 	}
+	
+
+	public int getNumVoie() {
+		return numVoie;
+	}
+
+	public void setNumVoie(int numVoie) {
+		this.numVoie = numVoie;
+	}
 
 	@Override
 	public int hashCode() {
@@ -133,5 +151,14 @@ public class Adresse extends DbObject {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Adresse [libelle=" + libelle + ", nomDeVoie=" + nomDeVoie + ", codePostale=" + codePostale + ", Ville="
+				+ Ville + ", pays=" + pays + ", numVoie=" + numVoie + ", typeAdresse=" + typeAdresse + ", client="
+				+ client + ", prestataire=" + prestataire + "]";
+	}
+	
+	
 
 }

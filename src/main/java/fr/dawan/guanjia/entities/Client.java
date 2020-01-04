@@ -25,7 +25,7 @@ public class Client extends Utilisateur {
 	@Transient
 	private Map<String, String> preferences;
 	
-	@OneToMany(mappedBy="client",cascade = CascadeType.PERSIST,fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="client", cascade = CascadeType.PERSIST, fetch=FetchType.EAGER)
 	private Set<Adresse> adresses = new HashSet<Adresse>();
 	
 	@Transient
@@ -33,6 +33,7 @@ public class Client extends Utilisateur {
 	
 	@Transient
 	private Set<Adresse> adressesLivraison = new HashSet<Adresse>();
+	
 	
 	public List<Panier> getListPanier() {
 		return new ArrayList<Panier>(listPanier);

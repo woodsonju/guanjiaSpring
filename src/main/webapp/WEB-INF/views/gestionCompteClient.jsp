@@ -31,14 +31,17 @@
 		<br> <br> <br>
 
 		<div class="titre">
-			<h1 align="center">Compte Client</h1>
+			<h1 align="center">Compte Client
+			</h1>
 		</div>
 
 		<br> <br>
 
 		<div class="container">
 
-			<form action="#" method="post" role="form" autocomplete="off">
+			<form action="client/updateClient" method="post" role="form" modelAttribute="client" autocomplete="off">
+             
+             <input name="id" type="hidden" value="${client.id}"/>
 
 				<div class="row">
 					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-8 col-12">
@@ -47,73 +50,45 @@
 								<h3 class="mb-0">Coordonnées</h3>
 							</div>
 							<div class="card-body">
-
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Nom</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Nom</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="nom" id="nom"
-											placeholder="nom" value="JUSTE" required disabled>
+											placeholder="Nom" value="${userSession.nom}" required>
 									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-
+								</div>                      		
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Prénom</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Prénom</label>
+									<div class="col-lg-8 col-md-12">
 										<input class="form-control" type="text" name="prenom"
-											id="prenom" placeholder="Prenom" value="Woodson" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="prenom" placeholder="Prenom" value="${userSession.prenom}" required>
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Date
+									<label class="col-lg-4 col-form-label form-control-label">Date
 										de naissance</label>
-									<div class="col-md-6 col-9">
+									<div class="col-lg-8 col-md-12">
 										<input class="form-control" type="text" name="datenaissance"
-											id="datenaissance" placeholder="datenaissance"
-											value="23/01/1986" required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="datenaissance" placeholder="Votre date de naissance"
+											value="${userSession.dateNaissance}" required>
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Email</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Email</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="email" class="form-control" name="email"
-											id="email" placeholder="email" value="wood@gmail.com"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="email" placeholder="email" value="${userSession.email}"
+											required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Téléphone</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Téléphone</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="numTelephone"
-											id="telephone" placeholder="telephone" value="0564847515"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="telephone" placeholder="telephone" value="${userSession.numTelephone}"
+											required>
 									</div>
 								</div>
 							</div>
@@ -126,60 +101,37 @@
 							</div>
 							<div class="card-body">
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Identifiant</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4  col-form-label form-control-label">Identifiant</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="email" class="form-control" name="email"
-											id="email" placeholder="email" value="pizzatheque@gmail.com"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="email" placeholder="email" value="${userSession.email}"
+											required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Mot
+									<label class="col-lg-4 col-form-label form-control-label">Mot
 										de passe actuel</label>
-									<div class="col-md-6 col-9">
+									<div class="col-lg-8 col-md-12">
 										<input type="password" class="form-control" name="pwd"
-											id="pwd" placeholder="pwd" value="dawan2019" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="pwd" placeholder="pwd" value="${userSession.pwd}" required>
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Nouveau
+									<label class="col-lg-4 col-form-label form-control-label">Nouveau
 										Mot de passe</label>
-									<div class="col-md-6 col-9">
+									<div class="col-lg-8 col-md-12">
 										<input type="password" class="form-control" name="pwd"
-											id="pwd" placeholder="8 caractères min" value="" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="pwd" placeholder="8 caractères min" value="">
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Confirmer
+									<label class="col-lg-4 col-form-label form-control-label">Confirmer
 										nouveau Mot de passe</label>
-									<div class="col-md-6 col-9">
+									<div class="col-lg-8 col-md-12">
 										<input type="password" class="form-control" name="pwd"
-											id="pwd" placeholder="8 caractères min" value="" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="pwd" placeholder="8 caractères min" value="">
 									</div>
 								</div>
 							</div>
@@ -194,33 +146,22 @@
 							</div>
 							<div class="card-body">
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Etage</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Etage</label>
+									<div class="col-lg-8 col-md-12">
 										<input class="form-control" type="text" name="etage"
-											id="etage" placeholder="etage" value="5" required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="etage" placeholder="etage" value="5" required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Numero</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4  col-form-label form-control-label">Numero</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="numero"
-											id="numero" placeholder="numero" value="654" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="numero" placeholder="numero" value="654" required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Voie</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4  col-form-label form-control-label">Voie</label>
+									<div class="col-lg-8 col-md-12">
 										<select id="inputState" class="form-control">
 											<option selected>avenue</option>
 											<option>boulevard</option>
@@ -231,51 +172,29 @@
 											<option>passage</option>
 										</select>
 									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Nom de Voie</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Nom de Voie</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="nomDeVoie"
-											id="email" placeholder="nomDeVoie" value="Saint Germain" required
-											disabled>
-									</div>
-									<div class="col-md-2  col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="email" placeholder="nomDeVoie" value="Saint Germain" required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Code
+									<label class="col-lg-4 col-form-label form-control-label">Code
 										postal</label>
-									<div class="col-md-6 col-9">
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="codePostale"
 											id="codePostale" placeholder="codePostale" value="31750"
-											required disabled>
-									</div>
-									<div class="col-md-2  col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											required>
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Ville</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Ville</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="ville"
-											id="ville" placeholder="ville" value="Toulouse" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark ">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="ville" placeholder="ville" value="Toulouse" required>
 									</div>
 								</div>
 							</div>
@@ -288,33 +207,22 @@
 							</div>
 							<div class="card-body">
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Etage</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Etage</label>
+									<div class="col-lg-8 col-md-12">
 										<input class="form-control" type="text" name="etage"
-											id="etage" placeholder="etage" value="5" required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="etage" placeholder="etage" value="5" required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Numero</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Numero</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="numero"
-											id="numero" placeholder="numero" value="654" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="numero" placeholder="numero" value="654" required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Voie</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Voie</label>
+									<div class="col-lg-8 col-md-12">
 
 										<select id="inputState" class="form-control">
 											<option selected>avenue</option>
@@ -326,50 +234,28 @@
 											<option>passage</option>
 										</select>
 									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Nom de Voie</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Nom de Voie</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="nomDeVoie"
-											id="email" placeholder="nomDeVoie" value="Saint Germain" required
-											disabled>
-									</div>
-									<div class="col-md-2  col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="email" placeholder="nomDeVoie" value="Saint Germain" required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Code
+									<label class="col-lg-4 col-form-label form-control-label">Code
 										postal</label>
-									<div class="col-md-6 col-9">
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="codePostale"
 											id="codePostale" placeholder="codePostale" value="31750"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Ville</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Ville</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="ville"
-											id="ville" placeholder="ville" value="Toulouse" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark ">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="ville" placeholder="ville" value="Toulouse" required>
 									</div>
 								</div>
 							</div>

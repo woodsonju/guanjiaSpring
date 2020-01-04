@@ -14,8 +14,8 @@
 	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="../../resources/css/header.css" />
+<!-- <link rel="stylesheet" type="text/css"
+	href="../../resources/css/header.css" /> -->
 </head>
 <body>
 	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
@@ -56,7 +56,11 @@
 					class="nav-item active align-middle justify-content-center row align-items-center"
 					style="height: 60px"><a class="nav-link" href="client/compteclient"><img
 						src="resources/images/compte.png" alt="Logo" style="width: 40px;"></a>
-					<a class="nav-link">Compte</a>
+					<a class="nav-link">Compte 
+						<c:if test="${sessionScope.isConnected}">
+							de Monsieur ${userConnected.nom}
+						</c:if>
+					</a>
 				</li>
 				
 				<li

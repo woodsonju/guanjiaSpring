@@ -60,13 +60,14 @@ public class LoginController {
 			if (dbClient != null && dbClient.getPwd().contentEquals(u.getPwd())) {
 				session.setAttribute("utilisateur_id", dbClient.getId());
 				session.setAttribute("utilisateur_name", dbClient.getNom());
+				session.setAttribute("userConnected", dbClient);
 				model.addAttribute("isConnected", true);
 				switch (dbClient.getTypeUtilisateur()) {
 				case CLIENT:
-					result1 = "gestionCompteClient";
+					result1 = "redirect:/client/compteclient";
 					break;
 				case PRESTATAIRE:
-					result1 = "gestionComptePrestataire";
+					result1 = "redirect:/prestataire/compteprestataire";
 					break;
 				case ADMIN:
 					result1 = ("redirect:/admin/1/10");
@@ -104,7 +105,7 @@ public class LoginController {
 	}
 	
 
-	//Pour un mail htlm
+	//Pour un mail html
 	@SuppressWarnings("unused")
 	@PostMapping("/mot-de-passe-oublie")
 	//@Async
@@ -123,7 +124,6 @@ public class LoginController {
 			model.addAttribute("utilisateur-sendmailforpwd", u);
 			return "send_mail_for_reset_password";
 		} else {
-			System.out.println("Passssssssssssss error");
 			//On vérifie que l'utilisateur existe dans la base de données
 			Utilisateur dbClient = utilisateurDao.findByEmail(u.getEmail());
 			System.out.println(dbClient);

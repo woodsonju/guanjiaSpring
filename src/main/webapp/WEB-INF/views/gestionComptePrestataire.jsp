@@ -38,7 +38,7 @@
 
 		<div class="container">
 
-			<form action="#" method="post" role="form" autocomplete="off">
+			<form action="prestataire/updatePrestataire" method="post" role="form" modelAttribute="prestataire" autocomplete="off">
 
 				<div class="row">
 
@@ -50,8 +50,8 @@
 							<div class="card-body">
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Catégorie</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Catégorie</label>
+									<div class="col-lg-8 col-md-12">
 
 										<select id="inputState" class="form-control">
 											<option selected>Restauration</option>
@@ -66,111 +66,70 @@
 											<option>Enfants</option>
 										</select>
 									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
 								</div>
 
 
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Nom
+									<label class="col-lg-4 col-form-label form-control-label">Nom
 										du gérant</label>
-									<div class="col-md-6 col-9">
-										<input class="form-control" type="text" name="nomgerant"
-											id="nomgerant" placeholder="NomGerant" value="Cavani"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+									<div class="col-lg-8 col-md-12">
+										<input class="form-control" type="text" name="nom"
+											id="nom" placeholder="NomGerant" value="${prestaSession.nom}"
+											required>
 									</div>
 								</div>
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Raison
+									<label class="col-lg-4 col-form-label form-control-label">Raison
 										sociale</label>
-									<div class="col-md-6 col-9">
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="raisonsocial"
 											id="raisonsocial" placeholder="RaisonSocial"
-											value="La Pizzathèque" required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											value="La Pizzathèque" required>
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Numero</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Numero</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="numero"
-											id="numero" placeholder="numero" value="16" required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="numero" placeholder="numero" value="16" required>
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Adresse</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Adresse</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="adresse"
 											id="adresse" placeholder="adresse" value="alle jean jaures"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											required>
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Code
+									<label class="col-lg-4 col-form-label form-control-label">Code
 										Postal</label>
-									<div class="col-md-6 col-9">
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="codepostal"
 											id="codepostal" placeholder="codepostal" value="31000"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											required>
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Ville</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Ville</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="text" class="form-control" name="ville"
-											id="ville" placeholder="ville" value="TOULOUSE" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="ville" placeholder="ville" value="TOULOUSE" required>
 									</div>
 								</div>
 
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Email</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Email</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="email" class="form-control" name="email"
-											id="email" placeholder="email" value="pizzateque@gmail.com"
-											required disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="email" placeholder="Email" value="${prestaSession.email}"
+											required>
 									</div>
 								</div>
 
@@ -186,58 +145,35 @@
 							</div>
 							<div class="card-body">
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Identifiant</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Identifiant</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="email" class="form-control" name="email"
-											id="email" placeholder="email" value="pizzatheque@gmail.com"
+											id="email" placeholder="Email" value="${prestaSession.email}"
 											required disabled>
 									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+								</div>
+								
+								<div class="form-group row">
+									<label class="col-lg-4 col-form-label form-control-label">Mot de passe actuel</label>
+									<div class="col-lg-8 col-md-12">
+										<input type="password" class="form-control" name="pwd"
+											id="pwd" placeholder="pwd" value="${prestaSession.pwd}" required>
 									</div>
 								</div>
 								
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Mot de passe actuel</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Nouveau Mot de passe</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="password" class="form-control" name="pwd"
-											id="pwd" placeholder="pwd" value="dawan2019" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="pwd" placeholder="8 caractères min" value="">
 									</div>
 								</div>
 								
 								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Nouveau Mot de passe</label>
-									<div class="col-md-6 col-9">
+									<label class="col-lg-4 col-form-label form-control-label">Confirmer nouveau Mot de passe</label>
+									<div class="col-lg-8 col-md-12">
 										<input type="password" class="form-control" name="pwd"
-											id="pwd" placeholder="8 caractères min" value="" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
-									</div>
-								</div>
-								
-								<div class="form-group row">
-									<label class="col-md-4 col-form-label form-control-label">Confirmer nouveau Mot de passe</label>
-									<div class="col-md-6 col-9">
-										<input type="password" class="form-control" name="pwd"
-											id="pwd" placeholder="8 caractères min" value="" required
-											disabled>
-									</div>
-									<div class="col-md-2 col-2">
-										<button class="btn btn-dark">
-											<i class="fa fa-plus fa-sm"></i>
-										</button>
+											id="pwd" placeholder="8 caractères min" value="">
 									</div>
 								</div>
 								

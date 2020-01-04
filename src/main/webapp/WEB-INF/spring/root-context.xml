@@ -50,5 +50,8 @@
 	<bean id="inscriptionValidator" class="fr.dawan.guanjia.validator.InscriptionValidator"/>
 	<bean id="resetPasswordValidator" class="fr.dawan.guanjia.validator.ResetPasswordValidator"/>
 	<bean id="emailValidatorForResetPWD" class="fr.dawan.guanjia.validator.EmailValidatorForResetPWD"/>
+	<bean id="adresseDao" class="fr.dawan.guanjia.dao.AdresseDao"/>
+	<bean id="clientDao" class="fr.dawan.guanjia.dao.ClientDao"/>
+	
 	
 </beans>

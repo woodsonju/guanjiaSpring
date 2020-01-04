@@ -29,6 +29,8 @@ public  class Utilisateur extends DbObject implements Serializable{
 	
 	private String confirmpwd;
 	
+	private String dateNaissance;
+	
 	private boolean statut;
 	
 	@Enumerated(EnumType.STRING)
@@ -123,7 +125,16 @@ public  class Utilisateur extends DbObject implements Serializable{
 		this.confirmpwd = confirmpwd;
 	}
 	
-	
+
+	public String getDateNaissance() {
+		return dateNaissance;
+	}
+
+
+	public void setDateNaissance(String dateNaissance) {
+		this.dateNaissance = dateNaissance;
+	}
+
 
 	public String getResetToken() {
 		return resetToken;
